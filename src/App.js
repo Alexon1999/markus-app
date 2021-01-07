@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Loader from './components/loading/Loading';
+import { AnimatePresence } from 'framer-motion';
+import Routing from './Routing';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loader = () => {
+      setTimeout(() => {
+        // fin du loading
+        setLoading(false);
+      }, 1000);
+    };
+
+    window.addEventListener('load', loader);
+
+    return () => {
+      window.removeEventListener('load', loader);
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AnimatePresence exitBeforeEnter>
+        {loading ? (
+          <Loader isLoading={loading} />
+        ) : (
+          <div className='App'>
+            <div className='app_container'>
+              <Routing />
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 

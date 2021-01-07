@@ -1,0 +1,28 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c3c3c;
+  transition: opacity 0.4s ease;
+}
+.loader .img {
+  width: 250px;
+}
+
+#loader.finished {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+#loader.finished .img {
+  display: none;
+}
