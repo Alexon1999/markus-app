@@ -15,14 +15,19 @@ const variants = {
 
 export const Navigation = ({ toggleOpen, currentPage }) => (
   <motion.ul variants={variants}>
-    {links.map(({ path, nom }) => (
-      <MenuItem
-        toggleOpen={toggleOpen}
-        key={nom}
-        path={path}
-        nom={nom}
-        currentPage={currentPage}
-      />
-    ))}
+    {links.map(({ path, nom, estDansHome }) => {
+      if (!estDansHome) {
+        return (
+          <MenuItem
+            toggleOpen={toggleOpen}
+            key={nom}
+            path={path}
+            nom={nom}
+            currentPage={currentPage}
+            estDansHome={estDansHome}
+          />
+        );
+      }
+    })}
   </motion.ul>
 );

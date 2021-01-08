@@ -46,7 +46,7 @@ const childVariants = {
 
 const Fonctionnalites = () => {
   return (
-    <div className='fonctionnalites__wrapper'>
+    <div className='fonctionnalites__wrapper' id='fonctionnalites'>
       <div className='fonctionnalites'>
         <h1 className='fonctionnalites__heading'>
           EKTOR est directement relié à votre caisse enregistreuse

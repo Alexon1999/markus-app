@@ -33,36 +33,40 @@ const datas = [
 
 const Home = () => {
   return (
-    <div className='home'>
-      <div className='home__container'>
-        <div className='home__carousel-container'>
-          <Carousel>
-            {datas.map((data) => (
-              <div className='carousel__item' key={data.alt}>
-                <div className='home__hero'>
-                  <div className='home__hero-hadings'>
-                    <h1>Markus</h1>
-                    <p>{data.en_tete}</p>
-                    <p className='home__subtext'>{data.sous_texte}</p>
-                    <a href={data.lien_telecharge} className='telecharger_btn'>
-                      Télécharger
-                    </a>
-                  </div>
+    <>
+      <div className='home'>
+        <div className='home__container'>
+          <div className='home__carousel-container'>
+            <Carousel>
+              {datas.map((data) => (
+                <div className='carousel__item' key={data.alt}>
+                  <div className='home__hero'>
+                    <div className='home__hero-hadings'>
+                      <h1>Markus</h1>
+                      <p>{data.en_tete}</p>
+                      <p className='home__subtext'>{data.sous_texte}</p>
+                      <a
+                        href={data.lien_telecharge}
+                        className='telecharger_btn'>
+                        Télécharger
+                      </a>
+                    </div>
 
-                  <div className='home__hero-image'>
-                    <img
-                      className='home__image'
-                      src={data.image}
-                      alt={data.alt}
-                    />
+                    <div className='home__hero-image'>
+                      <img
+                        className='home__image'
+                        src={data.image}
+                        alt={data.alt}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Carousel>
+              ))}
+            </Carousel>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

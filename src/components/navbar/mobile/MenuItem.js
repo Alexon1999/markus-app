@@ -20,13 +20,18 @@ const variants = {
   },
 };
 
-export const MenuItem = ({ nom, path, toggleOpen, currentPage }) => {
+export const MenuItem = ({
+  nom,
+  path,
+  toggleOpen,
+  currentPage,
+  estDansHome,
+}) => {
   return (
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}>
-      {/* <div className='icon-placeholder' style={style}></div> */}
       <Link
         onClick={toggleOpen}
         to={path}

@@ -18,7 +18,7 @@
   text-align: center;
   white-space: pre-wrap;
   font-size: 3rem;
-  margin: 1rem 0;
+  margin: 0 0 1rem;
 }
 
 .fonctionnalites__container {
@@ -82,21 +82,37 @@
 @media (max-width: 500px) {
   .fonctionnalites__container {
     grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr 1fr; */
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
   }
 
   .fonctionnalites__smartphone {
-    display: none;
+    /* display: none; */
+    /* grid-row: 0/1; */
+  }
+  .fonctionnalites__content {
+    /* grid-row: 1/2; */
   }
   .fonctionnalites__smartphone img {
-    display: none;
+    /* display: none; */
   }
 
   .fonctionnalites__heading {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .fonctionnalites__nom {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 2rem;
+  }
+
+  .fonctionnalites__smartphone img {
+    max-width: 60%;
+    object-fit: contain;
+    justify-self: center;
+    margin: 1rem auto 0 auto;
   }
 }

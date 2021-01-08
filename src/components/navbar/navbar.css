@@ -1,8 +1,11 @@
 .navbar {
+  position: sticky;
+  top: 0;
   border-bottom: 2px solid rgb(128, 128, 128);
   background: linear-gradient(to top, #383838, #525151, #525151) !important;
   /* border-bottom: 2px solid rgb(92, 91, 91); */
   /* background: #303030; */
+  z-index: 99;
 }
 .navbar__container {
   display: flex;

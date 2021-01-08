@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const useForm = (initialState) => {
   const [state, setState] = useState(initialState);
+  const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
     setState({
@@ -13,6 +14,8 @@ const useForm = (initialState) => {
   return {
     state,
     setState,
+    errors,
+    setErrors,
     handleInputChange,
   };
 };

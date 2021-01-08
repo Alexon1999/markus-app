@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Button,
   FormControl,
-  Icon,
   Input,
   InputLabel,
   makeStyles,
@@ -19,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
   },
   margin: {
-    margin: theme.spacing(2, 0),
+    margin: theme.spacing(1.5, 0),
   },
   withoutLabel: {
     marginTop: theme.spacing(3),
@@ -42,16 +41,45 @@ const initial = {
 };
 
 const ContactForm = () => {
-  const { state, handleInputChange } = useForm(initial);
+  const { state, handleInputChange, errors, setErrors } = useForm(initial);
 
   const { nom, email, nomSociete, numTel, message } = state;
 
   const classes = useStyles();
 
+  const estValide = () => {
+    const validator = {};
+
+    validator.nom = nom ? null : 'le champ nom est obligatore';
+    validator.message =
+      message.length > 10
+        ? null
+        : 'le champ message doit avoir au moins 10 caractères';
+    validator.nomSociete = nomSociete
+      ? null
+      : 'le champ nom societé est obligatore';
+
+    validator.email = /([a-zA-Z0-9-_.+]{5,})@.+\..+/.test(email)
+      ? null
+      : "Email n'est pas valide";
+
+    validator.numTel = /(?:(\+(\d{1,2})?)[ -]?)?\(?(?<first>\d{3})\)?[-\s]?(\d{3})[- ]?(\d{4})/.test(
+      numTel
+    )
+      ? null
+      : "Numéro de téléphone n'est pas valide";
+
+    setErrors({ ...validator });
+
+    return Object.values(validator).every((el) => !el);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert('envoyer');
+    if (estValide()) {
+      alert('envoyer');
+    }
   };
 
   return (
@@ -64,6 +92,8 @@ const ContactForm = () => {
         <InputLabel>Nom</InputLabel>
         <Input value={nom} name='nom' onChange={handleInputChange} required />
       </FormControl>
+      <div className='error'>{errors.nom}</div>
+
       <FormControl fullWidth className={classes.margin}>
         <InputLabel>Adresse Mail</InputLabel>
         <Input
@@ -74,6 +104,8 @@ const ContactForm = () => {
           required
         />
       </FormControl>
+      <div className='error'>{errors.email}</div>
+
       <FormControl fullWidth className={classes.margin}>
         <InputLabel>Nom de la société</InputLabel>
         <Input
@@ -83,6 +115,8 @@ const ContactForm = () => {
           required
         />
       </FormControl>
+      <div className='error'>{errors.nomSociete}</div>
+
       <FormControl fullWidth className={classes.margin}>
         <InputLabel>Numéro de Téléphone</InputLabel>
         <Input
@@ -92,6 +126,7 @@ const ContactForm = () => {
           required
         />
       </FormControl>
+      <div className='error'>{errors.numTel}</div>
 
       <TextField
         fullWidth
@@ -105,16 +140,13 @@ const ContactForm = () => {
         onChange={handleInputChange}
         variant='outlined'
       />
+      <div className='error'>{errors.message}</div>
 
       <Button
         type='submit'
         variant='contained'
         color='primary'
         className='submit'
-        style={{
-          display: 'flex',
-          margin: 'auto',
-        }}
         endIcon={<SendIcon />}>
         Envoyer
       </Button>

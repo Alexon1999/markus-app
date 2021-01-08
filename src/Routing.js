@@ -14,8 +14,11 @@ const Routing = () => {
         <NavBar />
 
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/fonctionnalites' component={Fonctionnalites} />
+          <Route exact path='/'>
+            <Home />
+            <Fonctionnalites />
+          </Route>
+          {/* <Route exact path='/fonctionnalites' component={Fonctionnalites} /> */}
           <Route exact path='/contact' component={Contact} />
           <Route exact component={NotFoundPage} />
         </Switch>
