@@ -70,7 +70,7 @@
   padding: 0.5rem 3.5rem;
   border: 1px solid white;
   border-radius: 9px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -84,7 +84,7 @@
 }
 
 .telecharger_btn:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   top: 0;
@@ -128,7 +128,7 @@
   display: inline-block;
   border-top: 15px solid transparent !important;
   border-bottom: 15px solid transparent !important;
-  content: '';
+  content: "";
 }
 
 .carousel .control-prev.control-arrow:before {

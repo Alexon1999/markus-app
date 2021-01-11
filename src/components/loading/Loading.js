@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import Logo from '../../imgs/markus.png';
-import './loading.css';
-import { motion } from 'framer-motion';
+import React from "react";
+import ReactDom from "react-dom";
+import Logo from "../../imgs/markus.png";
+import "./loading.css";
+import { motion } from "framer-motion";
 
 const loaderVariants = {
   from: {
@@ -39,7 +39,7 @@ const backdropVaraiants = {
     transition: {
       duration: 1.5,
       delay: 1,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -53,7 +53,7 @@ const Loader = ({ isLoading }) => {
           exit='exit'
           initial='from'
           animate='to'
-          className={`loader ${!isLoading && 'finished'}`}
+          className={`loader ${!isLoading && "finished"}`}
           id='loader'>
           <div>
             <motion.img
@@ -69,7 +69,7 @@ const Loader = ({ isLoading }) => {
       )}
     </>,
 
-    document.getElementById('portal')
+    document.getElementById("portal")
   );
 };
 

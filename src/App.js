@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import Loader from './components/loading/Loading';
-import { AnimatePresence } from 'framer-motion';
-import Routing from './Routing';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Loader from "./components/loading/Loading";
+import { AnimatePresence } from "framer-motion";
+import Routing from "./Routing";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -15,10 +15,10 @@ function App() {
       }, 1000);
     };
 
-    window.addEventListener('load', loader);
+    window.addEventListener("load", loader);
 
     return () => {
-      window.removeEventListener('load', loader);
+      window.removeEventListener("load", loader);
     };
   }, []);
 

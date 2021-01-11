@@ -1,15 +1,21 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-const useForm = (initialState) => {
+const useForm = (initialState, validator = null) => {
   const [state, setState] = useState(initialState);
   const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
+    const changingInput = { [e.target.name]: e.target.value };
+
     setState({
       ...state,
-      [e.target.name]: e.target.value,
+      ...changingInput,
     });
+
+    if (validator) validator(changingInput);
   };
+
+  const reinitialiserState = () => setState(initialState);
 
   return {
     state,
@@ -17,6 +23,7 @@ const useForm = (initialState) => {
     errors,
     setErrors,
     handleInputChange,
+    reinitialiserState,
   };
 };
 

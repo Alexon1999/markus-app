@@ -1,33 +1,33 @@
-import React from 'react';
-import './home.css';
+import React from "react";
+import "./home.css";
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
-import enelevement from '../../imgs/enlevement.png';
-import chef from '../../imgs/chef.png';
+import enelevement from "../../imgs/enlevement.png";
+import chef from "../../imgs/chef.png";
 
 const datas = [
   {
-    en_tete: 'Un outil complet pour gérer son restaurant de A à Z',
-    sous_texte: 'Gestion des stocks et management des ressources humaines',
-    image: '',
-    alt: 'gestion',
-    lien_telecharge: '#test',
+    en_tete: "Un outil complet pour gérer son restaurant de A à Z",
+    sous_texte: "Gestion des stocks et management des ressources humaines",
+    image: "",
+    alt: "gestion",
+    lien_telecharge: "#test",
   },
   {
-    en_tete: 'Gérer vos stocks avec précision et anticiper votre activité',
-    sous_texte: 'Améliorer le suivi de vos stocks et minimiser vos pertes',
+    en_tete: "Gérer vos stocks avec précision et anticiper votre activité",
+    sous_texte: "Améliorer le suivi de vos stocks et minimiser vos pertes",
     image: enelevement,
-    alt: 'enlevement',
-    lien_telecharge: '#test',
+    alt: "enlevement",
+    lien_telecharge: "#test",
   },
   {
-    en_tete: 'Optimiser le management de vos ressources humaines',
-    sous_texte: 'Registre du personnel, contrats de travail et lettres types',
+    en_tete: "Optimiser le management de vos ressources humaines",
+    sous_texte: "Registre du personnel, contrats de travail et lettres types",
     image: chef,
-    alt: 'chef',
-    lien_telecharge: '#test',
+    alt: "chef",
+    lien_telecharge: "#test",
   },
 ];
 

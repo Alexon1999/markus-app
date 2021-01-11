@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { motion } from 'framer-motion';
-import { MenuItem } from './MenuItem';
+import * as React from "react";
+import { motion } from "framer-motion";
+import { MenuItem } from "./MenuItem";
 
-import links from '../../../RouteLinks';
+import links from "../../../RouteLinks";
 
 const variants = {
   open: {
@@ -28,6 +28,7 @@ export const Navigation = ({ toggleOpen, currentPage }) => (
           />
         );
       }
+      return undefined;
     })}
   </motion.ul>
 );
