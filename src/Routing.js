@@ -21,7 +21,7 @@ const Routing = () => {
           </Route>
           {/* <Route exact path='/fonctionnalites' component={Fonctionnalites} /> */}
           <Route exact path='/contact' component={Contact} />
-          <Route exact path='/admin' component={Admin} />
+          <Route exact path='/laurent-magaye-markus93160' component={Admin} />
           <Route exact component={NotFoundPage} />
         </Switch>
       </Router>

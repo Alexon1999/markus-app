@@ -13,6 +13,7 @@ import SendIcon from "@material-ui/icons/Send";
 import "./form.css";
 import useForm from "../../hooks/useForm";
 
+import firebase from "firebase";
 import { db } from "../../config/firebase";
 
 const useStyles = makeStyles((theme) => ({
@@ -96,7 +97,12 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (estValide()) {
-      db.collection("contact").add(state);
+      db.collection("contact").add({
+        ...state,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+
+      // Envoyer email
       emailjs
         .sendForm(
           "service_6127e6c",

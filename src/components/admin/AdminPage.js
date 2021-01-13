@@ -22,9 +22,17 @@ const AdminPage = () => {
   };
 
   useEffect(() => {
-    db.collection("contact").onSnapshot((snapshot) => {
-      setContacts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-    });
+    // db.collection("contact").onSnapshot((snapshot) => {
+    //   setContacts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    // });
+    db.collection("contact")
+      .orderBy("createdAt", "desc")
+      .get()
+      .then((snapshot) => {
+        setContacts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
+      });
   });
 
   return (
