@@ -7,6 +7,7 @@ import NavBar from "./components/navbar/Navbar";
 import NotFoundPage from "./components/NotFoundPage";
 import Contact from "./components/contact";
 import Admin from "./components/admin";
+import Footer from "./components/footer/Footer";
 
 const Routing = () => {
   return (
@@ -18,6 +19,7 @@ const Routing = () => {
           <Route exact path='/'>
             <Home />
             <Fonctionnalites />
+            <Footer />
           </Route>
           {/* <Route exact path='/fonctionnalites' component={Fonctionnalites} /> */}
           <Route exact path='/contact' component={Contact} />

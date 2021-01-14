@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import {
   Button,
@@ -15,6 +15,7 @@ import useForm from "../../hooks/useForm";
 
 import firebase from "firebase";
 import { db } from "../../config/firebase";
+import ModalBootsrap from "../modal/Modal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,6 +47,10 @@ const initial = {
 
 const ContactForm = () => {
   const classes = useStyles();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const estValide = (fieldValues = state) => {
     const validator = {};
@@ -121,7 +126,7 @@ const ContactForm = () => {
 
       reinitialiserState();
 
-      alert("envoyer");
+      handleShow();
     }
   };
 
@@ -202,6 +207,20 @@ const ContactForm = () => {
         endIcon={<SendIcon />}>
         Envoyer
       </Button>
+
+      <ModalBootsrap
+        handleClose={handleClose}
+        show={show}
+        title={
+          <>
+            Envoyé
+            <i
+              class='fas fa-thumbs-up'
+              style={{ color: "#4caf50", marginLeft: "1rem" }}></i>
+          </>
+        }>
+        Message a bien été envoyé , Vous serez très rapidement être contacté
+      </ModalBootsrap>
     </form>
   );
 };

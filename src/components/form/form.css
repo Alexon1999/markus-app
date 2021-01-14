@@ -1,8 +1,9 @@
 form {
-  max-width: 500px;
+  max-width: 600px;
   background: white;
   text-align: left;
-  padding: 10px 40px;
+  /* padding: 10px 40px; */
+  padding-right: 15px;
   border-radius: 10px;
 }
 
@@ -13,6 +14,8 @@ form {
 }
 
 .error {
+  display: block;
+  width: 100%;
   color: #ff0062;
   font-size: 0.8em;
   font-weight: bold;

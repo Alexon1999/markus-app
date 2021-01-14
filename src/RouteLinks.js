@@ -3,7 +3,7 @@ const links = [
   { path: '/fonctionnalites', nom: 'Fonctionnalités', estDansHome: true },
   { path: '#test', nom: 'Qui sommes nous ?' },
   { path: '/contact', nom: 'Contact' },
-  { path: '/download', nom: 'Télécharger' },
+  { path: '/telecharger', nom: 'Télécharger' },
 ];
 
 export default links;

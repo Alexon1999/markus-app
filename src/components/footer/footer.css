@@ -1,0 +1,161 @@
+.footer {
+  background: #353434;
+}
+
+.footer__container {
+  width: 85%;
+  height: 100%;
+  margin: auto;
+  padding-top: 1.5rem;
+  max-width: 1600px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* place-items: center; */
+  place-content: center;
+}
+
+.footer__a-propos-de-nous {
+  padding: 8px;
+  border-right: 0.5px solid rgb(88, 87, 87);
+}
+
+.footer__a-propos-de-nous .footer__a-propos-de-nous__image-container {
+  max-width: 125px;
+}
+
+.footer__a-propos-de-nous .footer__a-propos-de-nous__image-container img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.footer__a-propos-de-nous__content {
+  color: rgb(175, 175, 175);
+}
+
+.footer__a-propos-de-nous__content__headings {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer__telechargement {
+  padding: 25px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-right: 0.5px solid rgb(88, 87, 87);
+}
+
+.footer__telechargement > h1 {
+  font-size: 1.2rem;
+  color: rgb(226, 223, 223);
+  position: relative;
+  padding-bottom: 0.7rem;
+}
+
+.footer__telechargement > h1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 5px;
+  background: rgb(119, 113, 113);
+  border-radius: 10px;
+}
+
+.footer__telechargement > a {
+  color: rgb(226, 223, 223);
+  padding: 10px 0 5px;
+}
+.footer__telechargement > a > img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 8px;
+}
+
+.footer__contacts > h1 {
+  font-size: 1.2rem;
+  color: rgb(226, 223, 223);
+  position: relative;
+  padding-bottom: 0.7rem;
+}
+
+.footer__contacts > h1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 5px;
+  background: rgb(119, 113, 113);
+  border-radius: 10px;
+}
+
+.footer__contacts-content > p,
+.footer__contacts-content > a {
+  margin: 3px 0;
+  padding: 0;
+  font-size: 0.7rem;
+}
+.footer__contacts a {
+  text-decoration: none;
+}
+
+.footer__contacts-content {
+  color: rgb(151, 150, 150);
+}
+
+.footer__contacts-content a {
+  color: #ccc;
+}
+
+.footer__contacts-content i {
+  margin-right: 10px;
+}
+
+.footer__suivez-nous {
+  display: flex;
+}
+
+.footer__suivez-nous a {
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+.footer__suivez-nous a > i {
+  color: #ccc;
+}
+
+@media (max-width: 850px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .footer__a-propos-de-nous {
+    border-right: 0;
+    border-bottom: 0.75px solid rgb(102, 100, 100);
+  }
+
+  .footer__telechargement {
+    border-right: 0;
+    border-bottom: 0.75px solid rgb(102, 100, 100);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer__telechargement {
+    border-right: 0;
+    border-bottom: 0;
+    padding: 0;
+  }
+}

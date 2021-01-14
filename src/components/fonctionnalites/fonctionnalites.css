@@ -26,6 +26,7 @@
   /* height: 100%; */
   grid-template-columns: 3fr 2fr;
   place-items: center;
+  /* place-content: center; */
 }
 
 .fonctionnalites__smartphone {
@@ -109,6 +110,15 @@
     margin: 2rem;
   }
 
+  .fonctionnalites__smartphone img {
+    max-width: 60%;
+    object-fit: contain;
+    justify-self: center;
+    margin: 1rem auto 0 auto;
+  }
+}
+
+@media (max-width: 1400px) {
   .fonctionnalites__smartphone img {
     max-width: 60%;
     object-fit: contain;

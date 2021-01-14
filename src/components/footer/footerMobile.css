@@ -1,0 +1,15 @@
+.footerMobile__a-propos-de-nous {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerMobile__a-propos-de-nous__image-container {
+  margin-bottom: 1rem;
+  width: 150px;
+}
+
+.footerMobile__a-propos-de-nous__image-container img {
+  width: 100%;
+  object-fit: contain;
+}
