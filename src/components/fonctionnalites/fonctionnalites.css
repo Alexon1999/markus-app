@@ -1,12 +1,19 @@
 .fonctionnalites__wrapper {
   background-color: #3c3c3c;
+  position: relative;
+}
+
+.fonctionnalites__bgImage {
+  position: absolute;
+  width: 250px;
+  bottom: 0;
 }
 
 .fonctionnalites {
   width: 95%;
-  max-width: 1300px;
+  max-width: 1400px;
   /* height: 100vh; */
-  padding: 3rem 0 5px;
+  padding: 3rem 0 3rem;
   margin: 0 auto 0;
   display: flex;
   flex-direction: column;
@@ -21,10 +28,17 @@
 
   display: flex;
   justify-content: center;
+  align-items: center;
   /* flex-direction: column; */
 
   /* height: 100%; */
   /* place-content: center; */
+}
+
+.fonctionnalites__content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .fonctionnalites__heading {
@@ -47,16 +61,14 @@
 
 .fonctionnalites__smartphone {
   display: flex;
+  justify-content: center;
   width: 100%;
   flex: 0.35;
 }
 
 .fonctionnalites__smartphone img {
-  max-width: 100%;
+  max-width: 65%;
   object-fit: contain;
-  /* justify-self: flex-start; */
-  /* margin-left: auto; */
-  /* margin-top: 1rem; */
 }
 
 .fonctionnalites__content-container {
@@ -75,6 +87,7 @@
   font-size: 1.6rem;
   white-space: pre-wrap;
   color: #fff;
+  margin-bottom: 1.2rem;
 }
 
 .fonctionnalites__icon {
@@ -92,6 +105,10 @@
   .fonctionnalites__nom {
     font-size: 1.3rem;
   }
+
+  .fonctionnalites__bgImage {
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: 800px) {
@@ -102,6 +119,10 @@
     flex-direction: column-reverse !important;
     justify-content: center;
     align-items: center;
+  }
+  .fonctionnalites__bgImage {
+    display: none;
+    visibility: hidden;
   }
 
   .fonctionnalites__content {
@@ -116,7 +137,7 @@
   }
 
   .fonctionnalites__icon {
-    margin-left: 0;
+    margin-left: 0 !important;
     margin-right: 1.5rem;
   }
 
@@ -130,7 +151,7 @@
 
   .fonctionnalites__smartphone img {
     /* display: none; */
-    max-width: 32% !important;
+    max-width: 30% !important;
   }
 }
 
@@ -163,15 +184,6 @@
     font-size: 1.4rem;
   }
 
-  .fonctionnalites__smartphone img {
-    max-width: 60%;
-    object-fit: contain;
-    justify-self: center;
-    margin: 1rem auto 0 auto;
-  }
-}
-
-@media (max-width: 1400px) {
   .fonctionnalites__smartphone img {
     max-width: 60%;
     object-fit: contain;

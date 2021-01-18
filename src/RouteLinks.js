@@ -1,9 +1,9 @@
 const links = [
-  { path: '/', nom: 'Accueil' },
-  { path: '/fonctionnalites', nom: 'Fonctionnalités', estDansHome: true },
-  { path: '#test', nom: 'Qui sommes nous ?' },
-  { path: '/contact', nom: 'Contact' },
-  { path: '/telecharger', nom: 'Télécharger' },
+  { path: "/", nom: "Accueil" },
+  { id: "fonctionnalites", nom: "Fonctionnalités", estDansHome: true },
+  { id: "about", nom: "Qui sommes nous ?", estDansHome: true },
+  { path: "/contact", nom: "Contact" },
+  { path: "/telecharger", nom: "Télécharger" },
 ];
 
 export default links;

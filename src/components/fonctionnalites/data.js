@@ -1,5 +1,7 @@
 import Smartphone from "../../imgs/smartphone.png";
 import Smartphone2 from "../../imgs/smartphone2.png";
+import management from "../../imgs/management.svg";
+import stocks from "../../imgs/stocks.svg";
 
 const datas = [
   {
@@ -17,6 +19,11 @@ const datas = [
       nom: "left",
       flexDirection: "row",
       marginRight: "1.5rem",
+    },
+    bgImage: {
+      image: stocks,
+      right: -40,
+      height: "45%",
     },
   },
   {
@@ -36,6 +43,11 @@ const datas = [
       textAlign: "right",
       alignItems: "flex-end",
       marginLeft: "1.5rem",
+    },
+    bgImage: {
+      image: management,
+      left: -60,
+      height: "60%",
     },
   },
 ];

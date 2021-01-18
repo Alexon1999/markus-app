@@ -9,18 +9,8 @@ const Presentation = () => {
   return (
     <div className='presentation'>
       <div className='presentation__illustration-container'>
-        <img
-          className='presentation__smartphone'
-          src={smartphone}
-          alt=''
-          srcset=''
-        />
-        <img
-          className='presentation__presentateur'
-          src={presentateur}
-          alt=''
-          srcset=''
-        />
+        <img className='presentation__smartphone' src={smartphone} alt='' />
+        <img className='presentation__presentateur' src={presentateur} alt='' />
       </div>
 
       <div className='presentation__content'>

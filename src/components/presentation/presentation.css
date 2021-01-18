@@ -132,4 +132,11 @@
   .presentation {
     padding-bottom: 15px;
   }
+
+  .presentation__presentateur {
+    max-width: 25%;
+  }
+  .presentation__smartphone {
+    max-width: 40%;
+  }
 }

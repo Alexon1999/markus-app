@@ -2,8 +2,6 @@ import React from "react";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import "./fonctionnalites.css";
 
-import Smartphone from "../../imgs/smartphone.png";
-
 import { motion } from "framer-motion";
 
 const containerVariants = {
@@ -44,7 +42,14 @@ const childVariants = {
   },
 };
 
-const Fonctionnalites = ({ titre, sousTitre, details, style, image }) => {
+const Fonctionnalites = ({
+  titre,
+  sousTitre,
+  details,
+  style,
+  image,
+  bgImage,
+}) => {
   return (
     <div className='fonctionnalites__wrapper' id='fonctionnalites'>
       <div className='fonctionnalites'>
@@ -55,7 +60,11 @@ const Fonctionnalites = ({ titre, sousTitre, details, style, image }) => {
             textAlign: style.textAlign,
           }}>
           <div className='fonctionnalites__smartphone'>
-            <img src={image} alt='smartphone' />
+            <img
+              src={image}
+              alt='smartphone'
+              style={{ justifySelf: style.alignItems }}
+            />
           </div>
 
           <div className='fonctionnalites__content-container'>
@@ -96,6 +105,17 @@ const Fonctionnalites = ({ titre, sousTitre, details, style, image }) => {
           </div>
         </div>
       </div>
+
+      <img
+        src={bgImage.image}
+        alt='bgimage'
+        style={{
+          right: bgImage.right,
+          left: bgImage.left,
+          height: bgImage.height,
+        }}
+        className='fonctionnalites__bgImage'
+      />
     </div>
   );
 };

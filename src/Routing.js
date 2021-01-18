@@ -11,6 +11,7 @@ import Footer from "./components/footer/Footer";
 import Telecharger from "./components/telecharger/telechargement";
 import Presentation from "./components/presentation/Presentation";
 import datas from "./components/fonctionnalites/data";
+import About from "./components/about/About";
 
 const Routing = () => {
   return (
@@ -24,8 +25,10 @@ const Routing = () => {
             <Presentation />
             {/* fonctionnalites */}
             {datas.map((data) => (
-              <Fonctionnalites {...data} />
+              <Fonctionnalites key={data.titre} {...data} />
             ))}
+
+            <About />
           </Route>
           {/* <Route exact path='/fonctionnalites' component={Fonctionnalites} /> */}
           <Route exact path='/contact' component={Contact} />

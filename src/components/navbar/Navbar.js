@@ -49,9 +49,9 @@ const NavBar = () => {
               if (location.pathname === "/") {
                 return (
                   <a
-                    href='#fonctionnalites'
+                    href={"#" + link.id}
                     key={link.nom}
-                    onClick={smoothScroll("fonctionnalites")}>
+                    onClick={smoothScroll(link.id)}>
                     {link.nom}
                   </a>
                 );
