@@ -5,3 +5,36 @@
   justify-content: space-around;
   height: 100%;
 }
+
+@media (max-width: 767px) {
+  .contact-details {
+    padding-left: 0.5rem;
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 748px) {
+  .contact-details {
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .contact-details .MuiCard-root {
+    margin: 1rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .contact-details {
+    display: block;
+    text-align: center;
+  }
+
+  .contact-details .MuiCard-root:last-of-type {
+    display: none;
+  }
+
+  .contact-details .MuiCard-root .MuiTypography-root {
+    font-size: 12px;
+  }
+}

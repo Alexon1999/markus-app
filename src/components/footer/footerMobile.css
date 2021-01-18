@@ -13,3 +13,15 @@
   width: 100%;
   object-fit: contain;
 }
+
+.footerMobile__telechargement,
+.footerMobile__contacts {
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+.footerMobile__contacts .footer__suivez-nous {
+  padding-top: 5px;
+  text-align: center;
+}

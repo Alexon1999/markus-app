@@ -76,7 +76,7 @@ const FooterMobile = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <div className='footer__telechargement'>
+          <div className='footer__telechargement footerMobile__telechargement'>
             <a href='#test'>
               <img src={googlePlay} alt='google play store' /> Google play Store
             </a>
@@ -98,7 +98,7 @@ const FooterMobile = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <div className='footer__contacts'>
+          <div className='footer__contacts footerMobile__contacts'>
             <div className='footer__contacts-content'>
               <p>
                 <i className='fas fa-phone-alt'></i> 0123456789
@@ -122,6 +122,22 @@ const FooterMobile = () => {
                 <i className='fab fa-linkedin-in'></i>
               </a>
             </div>
+          </div>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion className={classes.bg}>
+        <AccordionSummary
+          expandIcon={
+            <ExpandMoreIcon style={{ color: "rgb(226, 223, 223)" }} />
+          }
+          aria-controls='panel2a-content'
+          id='panel2a-header'>
+          <Typography className={classes.heading}>Conformité</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <div className='footer__legales'>
+            <a href='#test'>Mention légales</a>
+            <a href='#test'>CGU</a>
           </div>
         </AccordionDetails>
       </Accordion>

@@ -1,10 +1,10 @@
-import React from 'react';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import './fonctionnalites.css';
+import React from "react";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import "./fonctionnalites.css";
 
-import Smartphone from '../../imgs/smartphone.png';
+import Smartphone from "../../imgs/smartphone.png";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const containerVariants = {
   from: {
@@ -14,17 +14,17 @@ const containerVariants = {
     opacity: 1,
     transition: {
       // delay: 0.5,
-      type: 'spring',
+      type: "spring",
       mass: 0.4, //property on spring
       damping: 8, //property on spring
-      when: 'beforeChildren', //attendre qu'il se fasse puis animation du children motion element
+      when: "beforeChildren", //attendre qu'il se fasse puis animation du children motion element
       staggerChildren: 0.7, // montrer le children un par un avec un delai de 0.7s
     },
   },
   exit: {
-    x: '-100vw',
+    x: "-100vw",
     transition: {
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
 };
@@ -44,42 +44,55 @@ const childVariants = {
   },
 };
 
-const Fonctionnalites = () => {
+const Fonctionnalites = ({ titre, sousTitre, details, style, image }) => {
   return (
     <div className='fonctionnalites__wrapper' id='fonctionnalites'>
       <div className='fonctionnalites'>
-        <h1 className='fonctionnalites__heading'>
-          EKTOR est directement relié à votre caisse enregistreuse
-        </h1>
-        <div className='fonctionnalites__container'>
-          <div className='fonctionnalites__content'>
-            <motion.div
-              variants={containerVariants}
-              initial='from'
-              animate='to'>
-              <motion.p
-                variants={childVariants}
-                className='fonctionnalites__nom'>
-                <CheckCircleIcon
-                  className='fonctionnalites__icon'
-                  style={{ fontSize: 50 }}
-                />
-                Trans
-              </motion.p>
-              <motion.p
-                variants={childVariants}
-                className='fonctionnalites__nom'>
-                <CheckCircleIcon
-                  className='fonctionnalites__icon'
-                  style={{ fontSize: 50 }}
-                />
-                Piloter la performance de votre établissement
-              </motion.p>
-            </motion.div>
+        <div
+          className='fonctionnalites__container'
+          style={{
+            flexDirection: style.flexDirection,
+            textAlign: style.textAlign,
+          }}>
+          <div className='fonctionnalites__smartphone'>
+            <img src={image} alt='smartphone' />
           </div>
 
-          <div className='fonctionnalites__smartphone'>
-            <img src={Smartphone} alt='smartphone' />
+          <div className='fonctionnalites__content-container'>
+            <h1 className='fonctionnalites__heading'>{titre}</h1>
+            <p className='fonctionnalites__subHeading'>{sousTitre}</p>
+            <div className='fonctionnalites__content'>
+              <motion.div
+                variants={containerVariants}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: style.alignItems,
+                }}
+                initial='from'
+                animate='to'>
+                {details.map((detail) => (
+                  <motion.p
+                    key={detail}
+                    variants={childVariants}
+                    style={{
+                      textAlign: style.textAlign,
+                      flexDirection: style.flexDirection,
+                    }}
+                    className='fonctionnalites__nom'>
+                    <CheckCircleIcon
+                      className='fonctionnalites__icon'
+                      style={{
+                        marginRight: style.marginRight,
+                        marginLeft: style.marginLeft,
+                        fontSize: 40,
+                      }}
+                    />
+                    {detail}
+                  </motion.p>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>

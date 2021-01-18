@@ -10,6 +10,7 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 
 const datas = [
   {
+    id: 1,
     nom: "Adresse",
     content: [
       "CEOS TECH",
@@ -21,17 +22,20 @@ const datas = [
   },
 
   {
+    id: 2,
     nom: "Téléphone",
     content: ["(+33) 615244088"],
     icone: PhoneAndroidIcon,
   },
 
   {
+    id: 3,
     nom: "Email",
     content: ["Laurentgoulenok@gmail.com"],
     icone: MailOutlineIcon,
   },
   {
+    id: 4,
     content: [
       <a href='#test' target='_blank'>
         <i className='fab fa-facebook'></i>
@@ -50,7 +54,7 @@ const ContactDetails = () => {
   return (
     <div className='contact-details'>
       {datas.map((data) => (
-        <Card {...data} key={data.nom} />
+        <Card {...data} key={data.id} />
       ))}
     </div>
   );

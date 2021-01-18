@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 
 import "./footer.css";
 import logo from "../../imgs/logo.png";
@@ -11,7 +11,7 @@ import FooterMobile from "./FooterMobile";
 const Footer = () => {
   // const footer_container_ref = useRef(null);
   // const { height, width } = useDimensions(footer_container_ref);
-  const { isInTheMediaQuery } = useWindowMatchMedia(500);
+  const { isInTheMediaQuery } = useWindowMatchMedia(600);
 
   return (
     <div className='footer'>
@@ -27,14 +27,7 @@ const Footer = () => {
 
             <div className='footer__a-propos-de-nous__content'>
               <div className='footer__a-propos-de-nous__content__headings'>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                  voluptas delectus harum dicta excepturi enim!
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Pariatur soluta debitis, doloremque animi dicta obcaecati.
-                </p>
+                <p>Le bras de droit des restaurateurs</p>
               </div>
             </div>
           </div>
@@ -74,6 +67,12 @@ const Footer = () => {
                 <i className='fab fa-linkedin-in'></i>
               </a>
             </div>
+          </div>
+
+          <div className='footer__legales'>
+            <h1>Conformité</h1>
+            <a href='#test'>Mention légales</a>
+            <a href='#test'>CGU</a>
           </div>
         </div>
       ) : (

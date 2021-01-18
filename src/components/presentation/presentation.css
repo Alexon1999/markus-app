@@ -1,0 +1,135 @@
+.presentation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  /* max-width: 1300px; */
+  /* min-height: 60vh; */
+  padding: 2rem 1rem 2rem 1rem;
+  margin: 0 auto 0;
+}
+
+.presentation__illustration-container {
+  display: flex;
+  justify-content: center;
+  flex: 0.2;
+}
+
+.presentation__presentateur {
+  align-self: flex-end;
+  max-width: 50%;
+  object-fit: contain;
+}
+.presentation__smartphone {
+  max-width: 67%;
+  object-fit: contain;
+}
+
+.presentation__content {
+  flex: 0.8;
+  padding: 0 0 0 5rem;
+  text-align: center;
+}
+
+.presentation__content > h1 {
+  color: #3bb9e0;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+.presentation__content > p {
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: pre-wrap;
+  line-height: 40px;
+  padding: 2rem 0 0 2rem;
+  position: relative;
+}
+
+.presentation__content > p::before {
+  position: absolute;
+  content: "";
+  background-image: url("../../imgs/quote-left.svg");
+  top: 10px;
+  left: 18px;
+  width: 22px;
+  height: 22px;
+  opacity: 0.25;
+}
+.presentation__content > p::after {
+  position: absolute;
+  content: "";
+  background-image: url("../../imgs/quote-right.svg");
+  bottom: 0px;
+  right: 0px;
+  width: 22px;
+  height: 22px;
+  opacity: 0.25;
+}
+
+@media (max-width: 1250px) {
+  .presentation__content > p::before {
+    top: 0px;
+    left: 0px;
+  }
+}
+@media (max-width: 1130px) {
+  .presentation__content > h1 {
+    font-size: 2.5rem;
+  }
+  .presentation__content > p {
+    font-size: 1.5rem;
+    padding: 1rem 0 0 1rem;
+  }
+}
+@media (max-width: 985px) {
+  .presentation__content > h1 {
+    font-size: 2rem;
+  }
+  .presentation__content > p {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 850px) {
+  .presentation {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .presentation__content > h1 {
+    position: relative;
+    padding-bottom: 12px;
+  }
+
+  .presentation__content > h1::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50;
+    width: 30%;
+    height: 10px;
+    background: #3bb9e0;
+    border-radius: 10px;
+  }
+
+  .presentation__content {
+    flex: 0.8;
+    padding: 0;
+    text-align: center;
+  }
+  .presentation__presentateur {
+    max-width: 30%;
+  }
+  .presentation__smartphone {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 590px) {
+  .presentation__content > h1::before {
+    left: 50%;
+    width: 30%;
+    transform: translateX(-50%);
+  }
+  .presentation {
+    padding-bottom: 15px;
+  }
+}

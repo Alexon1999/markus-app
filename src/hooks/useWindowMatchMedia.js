@@ -23,7 +23,7 @@ const useWindowMatchMedia = (width) => {
     return () => {
       mql.removeListener(onMediaChange);
     };
-  }, []);
+  }, [width]);
 
   return {
     isInTheMediaQuery,

@@ -5,36 +5,38 @@ import "./home.css";
 // import { Carousel } from "react-responsive-carousel";
 
 // import enelevement from "../../imgs/enlevement.png";
-import cooker from "../../imgs/cooker1.svg";
+import cuisinier from "../../imgs/cuisinier.svg";
+import chef from "../../imgs/chef.svg";
 import complete from "../../imgs/complete.svg";
-import logistics from "../../imgs/logistics.svg";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
 
 import { Link } from "react-router-dom";
+import { smoothScroll } from "../../utilities";
 
 const datas = [
   {
-    en_tete: "Un outil complet pour gérer votre restaurant de A à Z",
+    en_tete: "Un outil complet pour piloter votre restaurant avec performance",
     sous_texte: "Gestion des stocks et management des ressources humaines",
-    image: cooker,
+    image: chef,
     alt: "gestion",
-    lien_telecharge: "/telecharger",
+    lien: { route: "/telecharger", nom: "Télécharger" },
   },
   {
-    en_tete: "Gérer vos stocks avec précision et anticiper votre activité",
+    en_tete: "Gérez vos stocks avec précision et maximisez vos marges ",
     sous_texte: "Améliorer le suivi de vos stocks et minimiser vos pertes",
-    image: logistics,
+    image: cuisinier,
     alt: "enlevement",
-    lien_telecharge: "/telecharger",
+    lien: { route: "/contact", nom: "Contact" },
   },
   {
     en_tete: "Optimiser le management de vos ressources humaines",
-    sous_texte: "Registre du personnel, contrats de travail et lettres types",
+    sous_texte:
+      "Plus de flexibilité pour une gestion administrative simplifiée",
     image: complete,
     alt: "chef",
-    lien_telecharge: "/telecharger",
+    lien: { route: "/fonctionnalites", nom: "Fonctionnalités" },
   },
 ];
 
@@ -80,11 +82,19 @@ const Home = () => {
                       <h1>Markus</h1>
                       <p>{data.en_tete}</p>
                       <p className='home__subtext'>{data.sous_texte}</p>
-                      <Link
-                        to={data.lien_telecharge}
-                        className='telecharger_btn'>
-                        Télécharger
-                      </Link>
+                      {data.lien.nom === "Fonctionnalités" ? (
+                        <a
+                          href={"#" + data.lien.route.slice(1)}
+                          key={data.lien.nom}
+                          className='telecharger_btn'
+                          onClick={smoothScroll(data.lien.nom)}>
+                          {data.lien.nom}
+                        </a>
+                      ) : (
+                        <Link to={data.lien.route} className='telecharger_btn'>
+                          {data.lien.nom}
+                        </Link>
+                      )}
                     </div>
 
                     <div className='home__hero-image'>

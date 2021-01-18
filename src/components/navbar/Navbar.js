@@ -1,11 +1,12 @@
-import React, { useRef, useEffect, useMemo, useState } from 'react';
-import Logo from '../../imgs/logo.png';
-import './navbar.css';
+import React, { useRef, useEffect, useMemo, useState } from "react";
+import Logo from "../../imgs/logo.png";
+import "./navbar.css";
 
-import { Link, useLocation } from 'react-router-dom';
-import NavMobile from './mobile/NavMobile';
+import { Link, useLocation } from "react-router-dom";
+import NavMobile from "./mobile/NavMobile";
 
-import links from '../../RouteLinks';
+import links from "../../RouteLinks";
+import { smoothScroll } from "../../utilities";
 
 const NavBar = () => {
   const nav = useRef(null);
@@ -28,26 +29,11 @@ const NavBar = () => {
       }
     }
 
-    window.addEventListener('scroll', navBar);
+    window.addEventListener("scroll", navBar);
     return () => {
-      window.removeEventListener('scroll', navBar);
+      window.removeEventListener("scroll", navBar);
     };
   }, [isActive]);
-
-  const smoothScroll = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const href = e.target.hash || '#fonctionnalites'; // '#projects'
-    const offsetTop = document.querySelector(href)?.offsetTop - 100;
-
-    console.log({ href, offsetTop });
-
-    window.scroll({
-      top: offsetTop,
-      behavior: 'smooth',
-    });
-  };
 
   return (
     <nav className='navbar' ref={nav}>
@@ -60,24 +46,25 @@ const NavBar = () => {
         <div className='navbar__links'>
           {links.map((link) => {
             if (link.estDansHome) {
-              if (location.pathname === '/') {
+              if (location.pathname === "/") {
                 return (
                   <a
                     href='#fonctionnalites'
                     key={link.nom}
-                    onClick={smoothScroll}>
+                    onClick={smoothScroll("fonctionnalites")}>
                     {link.nom}
                   </a>
                 );
               }
               return undefined;
             }
+            // return jsx
             return (
               <Link
                 to={link.path}
                 key={link.nom}
                 className={
-                  location.pathname === link.path ? 'active' : undefined
+                  location.pathname === link.path ? "active" : undefined
                 }>
                 {link.nom}
               </Link>

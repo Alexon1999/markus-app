@@ -49,11 +49,12 @@ export default function SimpleCard({ nom, content, icone: Icone }) {
         )}
 
         <div style={{ display: !nom ? "flex" : undefined }}>
-          {content.map((c) => (
+          {content.map((c, i) => (
             <Typography
+              key={i}
               variant='body2'
               component='p'
-              className={!nom && classes.iconeReseaux}>
+              className={!nom ? classes.iconeReseaux : undefined}>
               {c}
             </Typography>
           ))}

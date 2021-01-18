@@ -13,8 +13,7 @@ import SendIcon from "@material-ui/icons/Send";
 import "./form.css";
 import useForm from "../../hooks/useForm";
 
-import firebase from "firebase";
-import { db } from "../../config/firebase";
+import { db, timestamp } from "../../config/firebase";
 import ModalBootsrap from "../modal/Modal";
 
 const useStyles = makeStyles((theme) => ({
@@ -104,7 +103,7 @@ const ContactForm = () => {
     if (estValide()) {
       db.collection("contact").add({
         ...state,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        createdAt: timestamp,
       });
 
       // Envoyer email
@@ -215,7 +214,7 @@ const ContactForm = () => {
           <>
             Envoyé
             <i
-              class='fas fa-thumbs-up'
+              className='fas fa-thumbs-up'
               style={{ color: "#4caf50", marginLeft: "1rem" }}></i>
           </>
         }>
