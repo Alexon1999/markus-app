@@ -22,11 +22,12 @@
 }
 
 .about__container-heading {
-  font-weight: 600;
-  color: #70d0f0;
+  font-weight: bolder;
+  color: #28bbec;
   padding-bottom: 5px;
   margin-bottom: 25px;
   position: relative;
+  letter-spacing: 4px;
 }
 .about__container-heading::before {
   content: "";
@@ -40,12 +41,14 @@
 }
 
 .about__container-subheading {
-  font-weight: 600;
+  font-weight: 800;
   font-size: 1.4rem;
-  color: rgb(99, 97, 97);
+  color: rgb(14, 13, 13);
+  color: #0a2540;
   margin-bottom: 25px;
 }
 .about__container-text {
+  color: #425466;
   font-size: 1.1rem;
   margin-bottom: 20px;
 }

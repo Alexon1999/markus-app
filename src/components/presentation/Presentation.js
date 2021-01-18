@@ -2,8 +2,8 @@ import React from "react";
 
 import "./presentation.css";
 
-import smartphone from "../../imgs/smartphone__presentation.png";
-import presentateur from "../../imgs/presentation.svg";
+import smartphone from "../../images/smartphone__presentation.png";
+import presentateur from "../../images/presentation.svg";
 
 const Presentation = () => {
   return (

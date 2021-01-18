@@ -48,7 +48,7 @@
 .presentation__content > p::before {
   position: absolute;
   content: "";
-  background-image: url("../../imgs/quote-left.svg");
+  background-image: url("../../images/quote-left.svg");
   top: 10px;
   left: 18px;
   width: 22px;
@@ -58,7 +58,7 @@
 .presentation__content > p::after {
   position: absolute;
   content: "";
-  background-image: url("../../imgs/quote-right.svg");
+  background-image: url("../../images/quote-right.svg");
   bottom: 0px;
   right: 0px;
   width: 22px;

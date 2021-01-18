@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import Logo from "../../imgs/markus.png";
+import Logo from "../../images/markus.png";
 import "./loading.css";
 import { motion } from "framer-motion";
 

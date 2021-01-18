@@ -6,9 +6,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-import googlePlay from "../../imgs/google-play.svg";
-import appleStore from "../../imgs/app-store.svg";
-import logo from "../../imgs/logo.png";
+import googlePlay from "../../images/google-play.svg";
+import appleStore from "../../images/app-store.svg";
+import logo from "../../images/logo.png";
 
 import "./footerMobile.css";
 

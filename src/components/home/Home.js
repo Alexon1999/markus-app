@@ -4,10 +4,10 @@ import "./home.css";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { Carousel } from "react-responsive-carousel";
 
-// import enelevement from "../../imgs/enlevement.png";
-import cuisinier from "../../imgs/cuisinier.svg";
-import chef from "../../imgs/chef.svg";
-import complete from "../../imgs/complete.svg";
+// import enelevement from "../../images/enlevement.png";
+import cuisinier from "../../images/cuisinier.svg";
+import chef from "../../images/chef.svg";
+import complete from "../../images/complete.svg";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";

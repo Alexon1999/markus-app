@@ -1,9 +1,9 @@
 import React from "react";
 
 import "./footer.css";
-import logo from "../../imgs/logo.png";
-import googlePlay from "../../imgs/google-play.svg";
-import appleStore from "../../imgs/app-store.svg";
+import logo from "../../images/logo.png";
+import googlePlay from "../../images/google-play.svg";
+import appleStore from "../../images/app-store.svg";
 // import { useDimensions } from "../../hooks/useDimensions";
 import useWindowMatchMedia from "../../hooks/useWindowMatchMedia";
 import FooterMobile from "./FooterMobile";

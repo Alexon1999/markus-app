@@ -1,14 +1,14 @@
 import React from "react";
 
-import Iphone from "../../imgs/iphone.png";
-import Android from "../../imgs/android.png";
-import Appstore from "../../imgs/app-store.svg";
-import GooglePlay from "../../imgs/google-play.svg";
+import Iphone from "../../images/iphone.png";
+import Android from "../../images/android.png";
+import Appstore from "../../images/app-store.svg";
+import GooglePlay from "../../images/google-play.svg";
 import GetAppIcon from "@material-ui/icons/GetApp";
 
-import smartphone from "../../imgs/smartphone__presentation.png";
-import smartphone2 from "../../imgs/smartphone2.png";
-import man from "../../imgs/man.svg";
+import smartphone from "../../images/smartphone__presentation.png";
+import smartphone2 from "../../images/smartphone2.png";
+import man from "../../images/man.svg";
 
 import "./telecharger.css";
 

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useMemo, useState } from "react";
-import Logo from "../../imgs/logo.png";
+import Logo from "../../images/logo.png";
 import "./navbar.css";
 
 import { Link, useLocation } from "react-router-dom";
@@ -10,7 +10,6 @@ import { smoothScroll } from "../../utilities";
 
 const NavBar = () => {
   const nav = useRef(null);
-  const [isActive, toggleActive] = useState(false);
   const location = useLocation();
   const currentPage = useMemo(() => location.pathname, [location.pathname]);
 
@@ -23,7 +22,6 @@ const NavBar = () => {
 
       if (scrollTop >= windowHeight / 4) {
         nav.current.style.opacity = 0.97;
-        toggleActive(true);
       } else {
         nav.current.style.opacity = 1;
       }
@@ -33,7 +31,7 @@ const NavBar = () => {
     return () => {
       window.removeEventListener("scroll", navBar);
     };
-  }, [isActive]);
+  }, []);
 
   return (
     <nav className='navbar' ref={nav}>

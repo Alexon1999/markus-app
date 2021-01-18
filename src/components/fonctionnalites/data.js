@@ -1,7 +1,7 @@
-import Smartphone from "../../imgs/smartphone.png";
-import Smartphone2 from "../../imgs/smartphone2.png";
-import management from "../../imgs/management.svg";
-import stocks from "../../imgs/stocks.svg";
+import Smartphone from "../../images/smartphone.png";
+import Smartphone2 from "../../images/smartphone2.png";
+import management from "../../images/management.svg";
+import stocks from "../../images/stocks.svg";
 
 const datas = [
   {

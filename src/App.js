@@ -9,10 +9,11 @@ function App() {
 
   useEffect(() => {
     const loader = () => {
-      setTimeout(() => {
-        // fin du loading
-        setLoading(false);
-      }, 1000);
+      // setTimeout(() => {
+      //   setLoading(false);
+      // }, 1000);
+      //   // fin du loading
+      setLoading(false);
     };
 
     window.addEventListener("load", loader);
