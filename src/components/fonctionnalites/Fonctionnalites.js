@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import "./fonctionnalites.css";
 
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+
+import gsap from "gsap";
+import { useIntersection } from "react-use";
 
 const containerVariants = {
   from: {
@@ -49,7 +52,38 @@ const Fonctionnalites = ({
   style,
   image,
   bgImage,
+  num,
 }) => {
+  const fonctionnalites__div = useRef(null);
+
+  const intersection = useIntersection(fonctionnalites__div, {
+    root: null, // browser viewport
+    rootMargin: "0px",
+    threshold: 1,
+  });
+
+  const fadeIn = (element) => {
+    gsap.to(element, 1, {
+      opacity: 1,
+      y: 0,
+      ease: "power4.out",
+      stagger: { amount: 0.5 },
+    });
+  };
+  // Animation for fading out
+  const fadeOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      y: -40,
+      ease: "power2.out",
+      stagger: { amount: 0.5 },
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 1
+    ? fadeOut(`.animation${num}`)
+    : fadeIn(`.animation${num}`);
+
   return (
     <div className='fonctionnalites__wrapper' id='fonctionnalites'>
       <div className='fonctionnalites'>
@@ -71,24 +105,26 @@ const Fonctionnalites = ({
             <h1 className='fonctionnalites__heading'>{titre}</h1>
             <p className='fonctionnalites__subHeading'>{sousTitre}</p>
             <div className='fonctionnalites__content'>
-              <motion.div
-                variants={containerVariants}
+              <div
+                ref={fonctionnalites__div}
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   alignItems: style.alignItems,
                 }}
-                initial='from'
-                animate='to'>
+                // variants={containerVariants}
+                // initial='from'
+                // animate='to'
+              >
                 {details.map((detail) => (
-                  <motion.p
+                  <p
                     key={detail}
-                    variants={childVariants}
+                    // variants={childVariants}
                     style={{
                       textAlign: style.textAlign,
                       flexDirection: style.flexDirection,
                     }}
-                    className='fonctionnalites__nom'>
+                    className={`fonctionnalites__nom animation${num}`}>
                     <CheckCircleIcon
                       className='fonctionnalites__icon'
                       style={{
@@ -98,9 +134,9 @@ const Fonctionnalites = ({
                       }}
                     />
                     {detail}
-                  </motion.p>
+                  </p>
                 ))}
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

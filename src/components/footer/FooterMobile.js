@@ -51,14 +51,7 @@ const FooterMobile = () => {
 
             <div className='footerMobile__a-propos-de-nous__content'>
               <div className='footerMobile__a-propos-de-nous__content__headings'>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                  voluptas delectus harum dicta excepturi enim!
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Pariatur soluta debitis, doloremque animi dicta obcaecati.
-                </p>
+                <p>Le bras de droit des restaurateurs</p>
               </div>
             </div>
           </div>

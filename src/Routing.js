@@ -24,8 +24,8 @@ const Routing = () => {
             <Home />
             <Presentation />
             {/* fonctionnalites */}
-            {datas.map((data) => (
-              <Fonctionnalites key={data.titre} {...data} />
+            {datas.map((data, i) => (
+              <Fonctionnalites key={data.titre} num={i} {...data} />
             ))}
 
             <About />

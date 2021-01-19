@@ -75,7 +75,7 @@ const Home = () => {
 
           <Carousel pause={false}>
             {datas.map((data) => (
-              <Carousel.Item interval={5000} className='px-5' key={data.alt}>
+              <Carousel.Item interval={4500} className='px-5' key={data.alt}>
                 <div className='carousel__item'>
                   <div className='home__hero'>
                     <div className='home__hero-hadings'>

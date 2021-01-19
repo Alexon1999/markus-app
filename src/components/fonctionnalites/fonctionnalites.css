@@ -1,6 +1,7 @@
 .fonctionnalites__wrapper {
   background-color: #3c3c3c;
   position: relative;
+  overflow: hidden;
 }
 
 .fonctionnalites__bgImage {

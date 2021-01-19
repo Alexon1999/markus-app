@@ -1,6 +1,7 @@
 .about {
   /* background-color: #3c3c3c; */
   position: relative;
+  overflow: hidden;
 }
 
 .about > img {
@@ -16,6 +17,7 @@
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   width: 80%;
   margin: auto;
   min-height: 50vh;
@@ -25,7 +27,7 @@
   font-weight: bolder;
   color: #28bbec;
   padding-bottom: 5px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   position: relative;
   letter-spacing: 4px;
 }
@@ -49,7 +51,7 @@
 }
 .about__container-text {
   color: #425466;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
@@ -58,6 +60,15 @@
     width: 90%;
   }
   .about > img {
-    opacity: 0.6;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 568px) {
+  .about__container-heading {
+    font-size: 1.7rem;
+  }
+  .about__container-subheading {
+    font-size: 1.2rem;
   }
 }
