@@ -13,22 +13,30 @@ const variants = {
   },
 };
 
-export const Navigation = ({ toggleOpen, currentPage }) => (
+export const Navigation = ({
+  toggleOpen,
+  currentPage,
+  IsActiveButton,
+  activeButton,
+}) => (
   <motion.ul variants={variants}>
-    {links.map(({ path, nom, estDansHome }) => {
-      if (!estDansHome) {
-        return (
-          <MenuItem
-            toggleOpen={toggleOpen}
-            key={nom}
-            path={path}
-            nom={nom}
-            currentPage={currentPage}
-            estDansHome={estDansHome}
-          />
-        );
-      }
-      return undefined;
+    {links.map(({ path, nom, estDansHome, id }) => {
+      // if (!estDansHome) {
+      return (
+        <MenuItem
+          toggleOpen={toggleOpen}
+          key={nom}
+          path={path}
+          nom={nom}
+          currentPage={currentPage}
+          estDansHome={estDansHome}
+          id={id}
+          IsActiveButton={IsActiveButton}
+          activeButton={activeButton}
+        />
+      );
+      // }
+      // return undefined;
     })}
   </motion.ul>
 );

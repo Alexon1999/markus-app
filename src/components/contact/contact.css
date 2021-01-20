@@ -17,18 +17,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  margin: auto;
 }
 
 .contact__header {
-  text-align: center;
+  text-align: left;
   /* max-width: 40%; */
 }
 
 .contact__heading {
   color: #696969;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   position: relative;
   padding-bottom: 10px;
 }
@@ -38,8 +39,8 @@
   content: "";
   position: absolute;
   bottom: 0;
-  left: 33%;
-  width: 20%;
+  left: 0%;
+  width: 25%;
   height: 5px;
   background: rgb(119, 113, 113);
   border-radius: 10px;
@@ -81,4 +82,9 @@
     transform: translateX(-50%);
     width: 25%;
   }
+}
+
+.MuiCardContent-root,
+.MuiTypography-root {
+  font-family: "Raleway", sans-serif !important;
 }

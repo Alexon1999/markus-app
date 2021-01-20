@@ -66,3 +66,13 @@
     display: none;
   }
 }
+@media (max-width: 600px) {
+  .navbar__container {
+    height: 40px;
+  }
+
+  .navbar__logo {
+    width: 70px;
+    object-fit: contain;
+  }
+}

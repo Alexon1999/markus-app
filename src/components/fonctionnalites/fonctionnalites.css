@@ -2,6 +2,7 @@
   background-color: #3c3c3c;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgb(88, 88, 88);
 }
 
 .fonctionnalites__bgImage {

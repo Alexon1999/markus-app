@@ -3,7 +3,6 @@ form {
   background: white;
   text-align: left;
   /* padding: 10px 40px; */
-  padding-right: 15px;
   border-radius: 10px;
 }
 
@@ -11,6 +10,7 @@ form {
   display: flex !important;
   margin: auto !important;
   text-align: center !important;
+  background: #35a7e9 !important;
 }
 
 .error {

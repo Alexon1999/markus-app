@@ -14,7 +14,7 @@ const Presentation = () => {
 
   const intersection = useIntersection(presentationDiv, {
     root: null, // browser viewport
-    rootMargin: "0px",
+    rootMargin: "60px",
     threshold: 0.8,
   });
 
@@ -41,7 +41,7 @@ const Presentation = () => {
   // Animation for move
   const moveOut = (element) => {
     gsap.to(element, 1, {
-      x: -300,
+      x: -500,
       ease: "power4.out",
       stagger: {
         amount: 0.3,

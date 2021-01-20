@@ -5,7 +5,7 @@ import stocks from "../../images/stocks.svg";
 
 const datas = [
   {
-    titre: "Gérez vos stocks avec précision et anticipez votre activité",
+    titre: ["Gérez vos stocks avec précision et ", "anticipez votre activité"],
     sousTitre:
       "MARKUS permet aux restaurateurs de gérer entièrement leurs stocks depuis l’application",
     details: [
@@ -25,9 +25,16 @@ const datas = [
       right: -40,
       height: "45%",
     },
+    animation: {
+      x: {
+        from: -50,
+        to: 0,
+      },
+    },
   },
+
   {
-    titre: "Optimisez le management de vos ressources humaines",
+    titre: ["Optimisez le management de ", " vos ressources humaines"],
     sousTitre:
       "MARKUS vous assiste dans la gestion administrative de vos salariés ",
     details: [
@@ -48,6 +55,12 @@ const datas = [
       image: management,
       left: -60,
       height: "60%",
+    },
+    animation: {
+      x: {
+        from: 50,
+        to: 0,
+      },
     },
   },
 ];

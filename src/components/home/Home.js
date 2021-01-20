@@ -43,7 +43,7 @@ const datas = [
 const Home = () => {
   return (
     <>
-      <div className='home'>
+      <div className='home' id='home'>
         <div className='home__container'>
           {/* <div className='home__carousel-container'> */}
           {/* <Carousel>
@@ -75,14 +75,14 @@ const Home = () => {
 
           <Carousel pause={false}>
             {datas.map((data) => (
-              <Carousel.Item interval={4500} className='px-5' key={data.alt}>
+              <Carousel.Item interval={5000} className='px-5' key={data.alt}>
                 <div className='carousel__item'>
                   <div className='home__hero'>
                     <div className='home__hero-hadings'>
                       <h1>Markus</h1>
                       <p>{data.en_tete}</p>
                       <p className='home__subtext'>{data.sous_texte}</p>
-                      {data.lien.nom === "Fonctionnalités" ? (
+                      {/* {data.lien.nom === "Fonctionnalités" ? (
                         <a
                           href={"#" + data.lien.route.slice(1)}
                           key={data.lien.nom}
@@ -94,7 +94,14 @@ const Home = () => {
                         <Link to={data.lien.route} className='telecharger_btn'>
                           {data.lien.nom}
                         </Link>
-                      )}
+                      )} */}
+                      <a
+                        href={"#" + data.lien.route.slice(1)}
+                        key={data.lien.nom}
+                        className='telecharger_btn'
+                        onClick={smoothScroll(data.lien.nom)}>
+                        {data.lien.nom}
+                      </a>
                     </div>
 
                     <div className='home__hero-image'>

@@ -6,6 +6,11 @@
   height: 100%;
 }
 
+.contact-details .MuiPaper-root:last-of-type {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 767px) {
   .contact-details {
     padding-left: 0.5rem;

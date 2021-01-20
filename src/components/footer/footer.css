@@ -7,7 +7,7 @@
   width: 90%;
   height: 100%;
   margin: auto;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -38,8 +38,10 @@
 
 .footer__a-propos-de-nous__content__headings {
   margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
   text-align: center;
+  /* color: #44aeeb; */
 }
 
 .footer__telechargement {
@@ -168,6 +170,12 @@
   padding: 0;
   font-size: 0.7rem;
   color: rgb(151, 150, 150);
+}
+
+@media (min-width: 1500px) {
+  .footer__suivez-nous {
+    padding-top: 15px;
+  }
 }
 
 @media (max-width: 1200px) {

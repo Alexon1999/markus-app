@@ -30,7 +30,7 @@ const sidebar = {
   },
 };
 
-const NavMobile = ({ currentPage }) => {
+const NavMobile = ({ currentPage, IsActiveButton, activeButton }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
@@ -54,7 +54,12 @@ const NavMobile = ({ currentPage }) => {
       custom={height}
       ref={containerRef}>
       <motion.div className='background' variants={sidebar} />
-      <Navigation toggleOpen={toggleOpen} currentPage={currentPage} />
+      <Navigation
+        toggleOpen={toggleOpen}
+        currentPage={currentPage}
+        IsActiveButton={IsActiveButton}
+        activeButton={activeButton}
+      />
       <MenuToggle
         isOpen={isOpen}
         toggle={() => {

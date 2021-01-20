@@ -147,3 +147,9 @@ nav.nav-mobile .refresh {
     width: 100% !important;
   }
 }
+
+@media (max-width: 600px) {
+  nav.nav-mobile button {
+    top: 5px !important;
+  }
+}

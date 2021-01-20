@@ -131,6 +131,7 @@ const FooterMobile = () => {
           <div className='footer__legales'>
             <a href='#test'>Mention légales</a>
             <a href='#test'>CGU</a>
+            <a href='#test'>Politique de confidentialité</a>
           </div>
         </AccordionDetails>
       </Accordion>

@@ -29,10 +29,12 @@ const Routing = () => {
             ))}
 
             <About />
+            <Telecharger />
+            <Contact />
           </Route>
           {/* <Route exact path='/fonctionnalites' component={Fonctionnalites} /> */}
-          <Route exact path='/contact' component={Contact} />
-          <Route exact path='/telecharger' component={Telecharger} />
+          {/* <Route exact path='/contact' component={Contact} />
+          <Route exact path='/telecharger' component={Telecharger} /> */}
           <Route exact path='/laurent-magaye-markus93160' component={Admin} />
           <Route exact component={NotFoundPage} />
         </Switch>

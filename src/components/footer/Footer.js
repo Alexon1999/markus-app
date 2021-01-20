@@ -73,6 +73,7 @@ const Footer = () => {
             <h1>Conformité</h1>
             <a href='#test'>Mention légales</a>
             <a href='#test'>CGU</a>
+            <a href='#test'>Politique de confidentialité</a>
           </div>
         </div>
       ) : (

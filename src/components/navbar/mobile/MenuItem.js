@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { motion } from 'framer-motion';
+import * as React from "react";
+import { motion } from "framer-motion";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const variants = {
   open: {
@@ -26,18 +26,31 @@ export const MenuItem = ({
   toggleOpen,
   currentPage,
   estDansHome,
+  id,
+  IsActiveButton,
+  activeButton,
 }) => {
   return (
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}>
-      <Link
+      {/* <Link
         onClick={toggleOpen}
         to={path}
-        className={currentPage === path ? 'active' : undefined}>
+        className={currentPage === path ? "active" : undefined}>
         {nom}
-      </Link>
+      </Link> */}
+      <a
+        href={"#" + id}
+        key={nom}
+        className={id === activeButton ? "active" : undefined}
+        onClick={(e) => {
+          toggleOpen();
+          IsActiveButton(id)(e);
+        }}>
+        {nom}
+      </a>
     </motion.li>
   );
 };

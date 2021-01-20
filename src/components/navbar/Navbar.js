@@ -12,6 +12,7 @@ const NavBar = () => {
   const nav = useRef(null);
   const location = useLocation();
   const currentPage = useMemo(() => location.pathname, [location.pathname]);
+  const [activeButton, setActiveButton] = useState("accueil");
 
   useEffect(() => {
     function navBar() {
@@ -33,6 +34,11 @@ const NavBar = () => {
     };
   }, []);
 
+  const IsActiveButton = (id) => (e) => {
+    setActiveButton(id);
+    smoothScroll(id)(e);
+  };
+
   return (
     <nav className='navbar' ref={nav}>
       <div className='navbar__container'>
@@ -49,28 +55,34 @@ const NavBar = () => {
                   <a
                     href={"#" + link.id}
                     key={link.nom}
-                    onClick={smoothScroll(link.id)}>
+                    className={link.id === activeButton ? "active" : undefined}
+                    onClick={IsActiveButton(link.id)}>
                     {link.nom}
                   </a>
                 );
               }
               return undefined;
             }
+            return undefined;
             // return jsx
-            return (
-              <Link
-                to={link.path}
-                key={link.nom}
-                className={
-                  location.pathname === link.path ? "active" : undefined
-                }>
-                {link.nom}
-              </Link>
-            );
+            // return (
+            //   <Link
+            //     to={link.path}
+            //     key={link.nom}
+            //     className={
+            //       location.pathname === link.path ? "active" : undefined
+            //     }>
+            //     {link.nom}
+            //   </Link>
+            // );
           })}
         </div>
 
-        <NavMobile currentPage={currentPage} />
+        <NavMobile
+          currentPage={currentPage}
+          IsActiveButton={IsActiveButton}
+          activeButton={activeButton}
+        />
       </div>
     </nav>
   );

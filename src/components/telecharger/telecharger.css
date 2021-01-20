@@ -26,17 +26,6 @@
 .telecharger__headings h1 {
   padding-bottom: 10px;
   margin: 5px 0 16px;
-  position: relative;
-}
-.telecharger__headings > h1::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50;
-  width: 100%;
-  height: 5px;
-  background: #454546;
-  border-radius: 10px;
 }
 
 .telecharger__headings > p {
@@ -209,7 +198,7 @@ a:hover {
 
 @media (max-width: 600px) {
   .telecharger__container {
-    width: 80vw;
+    width: 70vw;
     grid-template-columns: 1fr;
     grid-row-gap: 100px;
     padding-top: 20px;
@@ -229,6 +218,7 @@ a:hover {
   }
 
   .telecharger__button {
+    font-size: 15px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid rgb(117, 116, 116);
   }
@@ -241,5 +231,11 @@ a:hover {
     box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid rgb(117, 116, 116);
     backdrop-filter: unset;
+  }
+}
+
+@media (max-width: 330px) {
+  .telecharger__container {
+    width: 80vw;
   }
 }

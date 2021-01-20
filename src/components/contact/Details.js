@@ -5,8 +5,8 @@ import "./contactdetails.css";
 import Card from "../card/Card";
 
 import MapIcon from "@material-ui/icons/Map";
-import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import PhoneIcon from "@material-ui/icons/Phone";
 
 const datas = [
   {
@@ -25,7 +25,7 @@ const datas = [
     id: 2,
     nom: "Téléphone",
     content: ["(+33) 615244088"],
-    icone: PhoneAndroidIcon,
+    icone: PhoneIcon,
   },
 
   {

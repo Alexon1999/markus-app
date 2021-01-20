@@ -53,6 +53,7 @@ const Fonctionnalites = ({
   image,
   bgImage,
   num,
+  animation,
 }) => {
   const fonctionnalites__div = useRef(null);
 
@@ -80,9 +81,31 @@ const Fonctionnalites = ({
     });
   };
 
+  const moveOut = (element) => {
+    gsap.to(element, 1, {
+      x: animation.x.from,
+      opacity: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+  };
+  // Animation for fading out
+  const moveIn = (element) => {
+    gsap.to(element, 1, {
+      x: animation.x.to,
+      opacity: 1,
+      ease: "power4.out",
+    });
+  };
+
   intersection && intersection.intersectionRatio < 1
-    ? fadeOut(`.animation${num}`)
-    : fadeIn(`.animation${num}`);
+    ? fadeOut(`.animation_fonctionnalites_${num}`)
+    : fadeIn(`.animation_fonctionnalites_${num}`);
+  intersection && intersection.intersectionRatio < 1
+    ? moveOut(`.animation_image_${num}`)
+    : moveIn(`.animation_image_${num}`);
 
   return (
     <div className='fonctionnalites__wrapper' id='fonctionnalites'>
@@ -96,13 +119,18 @@ const Fonctionnalites = ({
           <div className='fonctionnalites__smartphone'>
             <img
               src={image}
+              className={`animation_image_${num}`}
               alt='smartphone'
               style={{ justifySelf: style.alignItems }}
             />
           </div>
 
           <div className='fonctionnalites__content-container'>
-            <h1 className='fonctionnalites__heading'>{titre}</h1>
+            {titre.map((t) => (
+              <h1 key={t} className='fonctionnalites__heading'>
+                {t}
+              </h1>
+            ))}
             <p className='fonctionnalites__subHeading'>{sousTitre}</p>
             <div className='fonctionnalites__content'>
               <div
@@ -124,7 +152,7 @@ const Fonctionnalites = ({
                       textAlign: style.textAlign,
                       flexDirection: style.flexDirection,
                     }}
-                    className={`fonctionnalites__nom animation${num}`}>
+                    className={`fonctionnalites__nom animation_fonctionnalites_${num}`}>
                     <CheckCircleIcon
                       className='fonctionnalites__icon'
                       style={{
