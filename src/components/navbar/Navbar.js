@@ -12,7 +12,7 @@ const NavBar = () => {
   const nav = useRef(null);
   const location = useLocation();
   const currentPage = useMemo(() => location.pathname, [location.pathname]);
-  const [activeButton, setActiveButton] = useState("accueil");
+  const [activeButton, setActiveButton] = useState("home");
 
   useEffect(() => {
     function navBar() {
@@ -43,9 +43,12 @@ const NavBar = () => {
     <nav className='navbar' ref={nav}>
       <div className='navbar__container'>
         <div className='navbar__logo-container'>
-          <Link to='/'>
+          <a href='#home' onClick={IsActiveButton("home")}>
             <img className='navbar__logo' src={Logo} alt='Markus' />
-          </Link>
+          </a>
+          {/* <Link to='/'>
+            <img className='navbar__logo' src={Logo} alt='Markus' />
+          </Link> */}
         </div>
         <div className='navbar__links'>
           {links.map((link) => {

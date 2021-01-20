@@ -32,7 +32,9 @@ const Telecharger = () => {
   const moveOut = (element) => {
     gsap.to(element, 1, {
       y: -200,
-      x: -75,
+      // x: -75,
+      xPercent: -50,
+      left: "50%",
       opacity: 0,
       ease: "power4.out",
       stagger: {
@@ -44,8 +46,9 @@ const Telecharger = () => {
   const moveIn = (element) => {
     gsap.to(element, 1, {
       y: 0,
-      x: -72,
-      // x: 0,
+      // x: -75,
+      xPercent: -50,
+      left: "50%",
       opacity: 1,
       ease: "power4.out",
     });
