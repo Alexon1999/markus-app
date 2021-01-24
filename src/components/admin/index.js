@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "3rem auto",
   },
   margin: {
-    margin: theme.spacing(3, 0),
+    margin: theme.spacing(4, 1),
   },
 }));
 
@@ -56,44 +56,57 @@ const Admin = () => {
       {admin ? (
         <AdminPage />
       ) : (
-        <form
-          noValidate
-          autoComplete='off'
-          className={classes.root}
-          onSubmit={seConnecter}>
-          <FormControl fullWidth className={classes.margin}>
-            <InputLabel>Adresse Mail</InputLabel>
-            <Input
-              type='email'
-              name='email'
-              onChange={handleInputChange}
-              value={email}
-              required
-            />
-          </FormControl>
+        <div
+          style={{
+            height: "92vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
+          <form
+            noValidate
+            autoComplete='off'
+            className={classes.root}
+            onSubmit={seConnecter}>
+            <FormControl fullWidth className={classes.margin}>
+              <InputLabel>Adresse Mail</InputLabel>
+              <Input
+                type='email'
+                name='email'
+                onChange={handleInputChange}
+                value={email}
+                required
+              />
+            </FormControl>
 
-          <FormControl fullWidth className={classes.margin}>
-            <TextField
-              id='filled-password-input'
-              name='password'
-              label='Password'
-              type='password'
-              autoComplete='current-password'
-              variant='filled'
-              onChange={handleInputChange}
-              value={password}
-              required
-            />
-          </FormControl>
+            <FormControl fullWidth className={classes.margin}>
+              <TextField
+                id='filled-password-input'
+                name='password'
+                label='Password'
+                type='password'
+                autoComplete='current-password'
+                variant='filled'
+                onChange={handleInputChange}
+                value={password}
+                required
+              />
+            </FormControl>
 
-          <Button
-            type='submit'
-            variant='contained'
-            color='primary'
-            className='submit'>
-            Se connecter
-          </Button>
-        </form>
+            <Button
+              type='submit'
+              variant='contained'
+              color='primary'
+              style={{
+                display: "flex",
+                margin: "10px auto",
+                textAlign: "center",
+                background: "#35a7e9",
+              }}>
+              Se connecter
+            </Button>
+          </form>
+        </div>
       )}
     </>
   );

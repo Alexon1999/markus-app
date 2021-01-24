@@ -38,13 +38,13 @@ const datas = [
     id: 4,
     content: [
       <a href='#test' target='_blank'>
-        <i className='fab fa-facebook'></i>
+        <i className='fab fa-facebook' style={{ color: "#38B6FF" }}></i>
       </a>,
       <a href='#test' target='_blank'>
-        <i className='fab fa-twitter'></i>
+        <i className='fab fa-twitter' style={{ color: "#38B6FF" }}></i>
       </a>,
       <a href='#test' target='_blank'>
-        <i className='fab fa-linkedin-in'></i>
+        <i className='fab fa-linkedin-in' style={{ color: "#38B6FF" }}></i>
       </a>,
     ],
   },

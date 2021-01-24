@@ -43,12 +43,15 @@ const NavBar = () => {
     <nav className='navbar' ref={nav}>
       <div className='navbar__container'>
         <div className='navbar__logo-container'>
-          <a href='#home' onClick={IsActiveButton("home")}>
-            <img className='navbar__logo' src={Logo} alt='Markus' />
-          </a>
-          {/* <Link to='/'>
-            <img className='navbar__logo' src={Logo} alt='Markus' />
-          </Link> */}
+          {location.pathname === "/" ? (
+            <a href='#home' onClick={IsActiveButton("home")}>
+              <img className='navbar__logo' src={Logo} alt='Markus' />
+            </a>
+          ) : (
+            <Link to='/'>
+              <img className='navbar__logo' src={Logo} alt='Markus' />
+            </Link>
+          )}
         </div>
         <div className='navbar__links'>
           {links.map((link) => {

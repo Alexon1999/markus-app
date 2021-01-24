@@ -1,9 +1,16 @@
-import React from 'react';
+import React from "react";
 
 const NotFoundPage = () => {
   return (
-    <div>
-      <h1 style={{ textAlign: 'center' }}>404 Page non trouvée </h1>
+    <div
+      className='NotFoundPage'
+      style={{
+        height: "92vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}>
+      <h1 style={{ textAlign: "center" }}>404 Page non trouvée </h1>
     </div>
   );
 };

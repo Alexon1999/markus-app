@@ -71,9 +71,7 @@ const Footer = () => {
 
           <div className='footer__legales'>
             <h1>Conformité</h1>
-            <a href='#test'>Mention légales</a>
-            <a href='#test'>CGU</a>
-            <a href='#test'>Politique de confidentialité</a>
+            <a href='#test'>CGU &amp; Mention légales</a>
           </div>
         </div>
       ) : (

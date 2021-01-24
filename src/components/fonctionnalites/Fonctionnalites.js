@@ -121,7 +121,13 @@ const Fonctionnalites = ({
               src={image}
               className={`animation_image_${num}`}
               alt='smartphone'
-              style={{ justifySelf: style.alignItems }}
+              style={{
+                // justifySelf: style.nom === "right" ? "flex-end" : "flex-start",
+                ...(style.nom === "right"
+                  ? { marginLeft: "auto" }
+                  : { marginRight: "auto" }),
+                // width: imageWidth,
+              }}
             />
           </div>
 

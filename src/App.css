@@ -1,2 +1,10 @@
-.App {
+/* .App {
+  visibility: hidden;
+  display: none;
+  opacity: 0;
 }
+.App.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+} */

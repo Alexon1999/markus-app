@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   margin: {
-    margin: theme.spacing(1.5, 0),
+    margin: theme.spacing(1.8, 0),
   },
   withoutLabel: {
     marginTop: theme.spacing(3),
@@ -34,6 +34,24 @@ const useStyles = makeStyles((theme) => ({
 
   buttonIcon: {
     paddingLeft: 1,
+  },
+
+  border: {
+    "& label.Mui-focused": {
+      color: "#38B6FF",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#38B6FF",
+    },
+
+    "& .MuiOutlinedInput-root": {
+      "&:hover fieldset": {
+        borderColor: "#38B6FF",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#38B6FF",
+      },
+    },
   },
 }));
 
@@ -131,12 +149,8 @@ const ContactForm = () => {
   };
 
   return (
-    <form
-      noValidate
-      autoComplete='off'
-      className={classes.root}
-      onSubmit={handleSubmit}>
-      <FormControl fullWidth className={classes.margin}>
+    <form noValidate autoComplete='off' onSubmit={handleSubmit}>
+      <FormControl fullWidth className={`${classes.margin} ${classes.border} `}>
         <InputLabel>Nom</InputLabel>
         <Input value={nom} name='nom' onChange={handleInputChange} required />
       </FormControl>
@@ -151,7 +165,7 @@ const ContactForm = () => {
         {...(errors.name && { helperText: errors.name, error: true })}
       /> */}
 
-      <FormControl fullWidth className={classes.margin}>
+      <FormControl fullWidth className={`${classes.margin} ${classes.border} `}>
         <InputLabel>Adresse Mail</InputLabel>
         <Input
           type='email'
@@ -163,7 +177,7 @@ const ContactForm = () => {
       </FormControl>
       <div className='error'>{errors.email}</div>
 
-      <FormControl fullWidth className={classes.margin}>
+      <FormControl fullWidth className={`${classes.margin} ${classes.border} `}>
         <InputLabel>Nom de la société</InputLabel>
         <Input
           value={nomSociete}
@@ -174,7 +188,7 @@ const ContactForm = () => {
       </FormControl>
       <div className='error'>{errors.nomSociete}</div>
 
-      <FormControl fullWidth className={classes.margin}>
+      <FormControl fullWidth className={`${classes.margin} ${classes.border} `}>
         <InputLabel>Numéro de Téléphone</InputLabel>
         <Input
           value={numTel}
@@ -187,7 +201,7 @@ const ContactForm = () => {
 
       <TextField
         fullWidth
-        className={classes.margin}
+        className={`${classes.margin} ${classes.border} `}
         id='outlined-multiline-static'
         label='Message'
         multiline

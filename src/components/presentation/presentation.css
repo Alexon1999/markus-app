@@ -103,9 +103,10 @@
     content: "";
     position: absolute;
     bottom: 0;
-    left: 50;
+    left: 50%;
+    transform: translateX(-50%);
     width: 30%;
-    height: 10px;
+    height: 5px;
     background: #3bb9e0;
     border-radius: 10px;
   }
@@ -127,6 +128,7 @@
   .presentation__content > h1::before {
     left: 50%;
     width: 30%;
+    height: 10px;
     transform: translateX(-50%);
   }
   .presentation {
@@ -138,5 +140,11 @@
   }
   .presentation__smartphone {
     max-width: 40%;
+  }
+}
+
+@media (max-width: 590px) {
+  .presentation__content > p::after {
+    bottom: -15px;
   }
 }

@@ -72,7 +72,7 @@ const Telecharger = () => {
             votre restaurant
           </h4>
           <p>
-            Disponible <span>gratuitement</span> sur mobile et tablette
+            Bientôt Disponible <span>gratuitement</span> sur mobile et tablette
           </p>
         </div>
 
