@@ -6,13 +6,16 @@ import { Link, useLocation } from "react-router-dom";
 import NavMobile from "./mobile/NavMobile";
 
 import links from "../../RouteLinks";
-import { smoothScroll } from "../../utilities";
+import { debounce, isIntersecting, smoothScroll } from "../../utilities";
+import { useNavBarStateValue } from "../../contexts/Navbar/NavBarState";
+import { SET_ACTIVE } from "../../contexts/Navbar/actiontypes";
 
 const NavBar = () => {
   const nav = useRef(null);
   const location = useLocation();
   const currentPage = useMemo(() => location.pathname, [location.pathname]);
-  const [activeButton, setActiveButton] = useState("home");
+  // const [activeButton, setActiveButton] = useState("home");
+  const { state, dispatch } = useNavBarStateValue();
 
   useEffect(() => {
     function navBar() {
@@ -28,14 +31,32 @@ const NavBar = () => {
       }
     }
 
-    window.addEventListener("scroll", navBar);
+    window.addEventListener(
+      "scroll",
+      debounce(() => {
+        navBar();
+
+        state.forEach((link) => {
+          if (isIntersecting(link.id)) {
+            dispatch({
+              id: link.id,
+              type: SET_ACTIVE,
+            });
+          }
+        });
+      }, 1000)
+    );
     return () => {
       window.removeEventListener("scroll", navBar);
     };
   }, []);
 
   const IsActiveButton = (id) => (e) => {
-    setActiveButton(id);
+    // setActiveButton(id);
+    dispatch({
+      id,
+      type: SET_ACTIVE,
+    });
     smoothScroll(id)(e);
   };
 
@@ -54,14 +75,14 @@ const NavBar = () => {
           )}
         </div>
         <div className='navbar__links'>
-          {links.map((link) => {
+          {state.map((link) => {
             if (link.estDansHome) {
               if (location.pathname === "/") {
                 return (
                   <a
                     href={"#" + link.id}
                     key={link.nom}
-                    className={link.id === activeButton ? "active" : undefined}
+                    className={link.active ? "active" : undefined}
                     onClick={IsActiveButton(link.id)}>
                     {link.nom}
                   </a>
@@ -87,7 +108,7 @@ const NavBar = () => {
         <NavMobile
           currentPage={currentPage}
           IsActiveButton={IsActiveButton}
-          activeButton={activeButton}
+          // activeButton={activeButton}
         />
       </div>
     </nav>

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import ContactForm from "../form";
 
 import "./contact.css";
 import ContactDetails from "./Details";
 
 const Contact = () => {
+  const contact_div = useRef(null);
+
   return (
-    <div className='contact' id='contact'>
+    <div className='contact' id='contact' ref={contact_div}>
       <div className='contact__container'>
         <ContactDetails />
 

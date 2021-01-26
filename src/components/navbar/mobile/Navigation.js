@@ -2,7 +2,8 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 
-import links from "../../../RouteLinks";
+// import links from "../../../RouteLinks";
+import { useNavBarStateValue } from "../../../contexts/Navbar/NavBarState";
 
 const variants = {
   open: {
@@ -18,25 +19,30 @@ export const Navigation = ({
   currentPage,
   IsActiveButton,
   activeButton,
-}) => (
-  <motion.ul variants={variants}>
-    {links.map(({ path, nom, estDansHome, id }) => {
-      // if (!estDansHome) {
-      return (
-        <MenuItem
-          toggleOpen={toggleOpen}
-          key={nom}
-          path={path}
-          nom={nom}
-          currentPage={currentPage}
-          estDansHome={estDansHome}
-          id={id}
-          IsActiveButton={IsActiveButton}
-          activeButton={activeButton}
-        />
-      );
-      // }
-      // return undefined;
-    })}
-  </motion.ul>
-);
+}) => {
+  const { state } = useNavBarStateValue();
+
+  return (
+    <motion.ul variants={variants}>
+      {state.map(({ path, nom, estDansHome, id, active }) => {
+        // if (!estDansHome) {
+        return (
+          <MenuItem
+            toggleOpen={toggleOpen}
+            key={nom}
+            path={path}
+            nom={nom}
+            currentPage={currentPage}
+            estDansHome={estDansHome}
+            id={id}
+            active={active}
+            IsActiveButton={IsActiveButton}
+            activeButton={activeButton}
+          />
+        );
+        // }
+        // return undefined;
+      })}
+    </motion.ul>
+  );
+};

@@ -26,9 +26,9 @@ export const MenuItem = ({
   toggleOpen,
   currentPage,
   estDansHome,
+  active,
   id,
   IsActiveButton,
-  activeButton,
 }) => {
   return (
     <motion.li
@@ -44,7 +44,8 @@ export const MenuItem = ({
       <a
         href={"#" + id}
         key={nom}
-        className={id === activeButton ? "active" : undefined}
+        // className={id === activeButton ? "active" : undefined}
+        className={active ? "active" : undefined}
         onClick={(e) => {
           toggleOpen();
           IsActiveButton(id)(e);

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 // import ReactDOM from 'react-dom';
 
 import "./navmobile.css";
@@ -31,9 +31,11 @@ const sidebar = {
 };
 
 const NavMobile = ({ currentPage, IsActiveButton, activeButton }) => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isOpen, setOpen] = useState(false);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+
+  const toggleOpen = () => setOpen((prev) => !prev);
 
   useEffect(() => {
     if (isOpen) {
