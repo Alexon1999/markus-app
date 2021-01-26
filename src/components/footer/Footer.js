@@ -71,7 +71,9 @@ const Footer = () => {
 
           <div className='footer__legales'>
             <h1>Conformité</h1>
-            <a href='#test'>CGU &amp; Mention légales</a>
+            <a href='CGU site web Markus.pdf' target='_blank'>
+              CGU &amp; Mention légales
+            </a>
           </div>
         </div>
       ) : (

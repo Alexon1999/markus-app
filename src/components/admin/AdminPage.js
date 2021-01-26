@@ -33,7 +33,7 @@ const AdminPage = () => {
           snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
         );
       });
-  });
+  }, []);
 
   return (
     <div
@@ -41,6 +41,7 @@ const AdminPage = () => {
         position: "relative",
         margin: "1rem",
         padding: "1rem",
+        minHeight: "80vh",
       }}>
       <IconButton className={classes.root} onClick={seDeconnecter}>
         <ExitToAppIcon style={{ fontSize: 40 }} />

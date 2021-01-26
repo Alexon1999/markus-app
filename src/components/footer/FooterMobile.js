@@ -129,7 +129,9 @@ const FooterMobile = () => {
         </AccordionSummary>
         <AccordionDetails>
           <div className='footer__legales'>
-            <a href='#test'>CGU &amp; Mention légales</a>
+            <a href='CGU site web Markus.pdf' target='_blank'>
+              CGU &amp; Mention légales
+            </a>
           </div>
         </AccordionDetails>
       </Accordion>

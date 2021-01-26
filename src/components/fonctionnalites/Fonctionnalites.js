@@ -7,43 +7,43 @@ import "./fonctionnalites.css";
 import gsap from "gsap";
 import { useIntersection } from "react-use";
 
-const containerVariants = {
-  from: {
-    opacity: 0,
-  },
-  to: {
-    opacity: 1,
-    transition: {
-      // delay: 0.5,
-      type: "spring",
-      mass: 0.4, //property on spring
-      damping: 8, //property on spring
-      when: "beforeChildren", //attendre qu'il se fasse puis animation du children motion element
-      staggerChildren: 0.7, // montrer le children un par un avec un delai de 0.7s
-    },
-  },
-  exit: {
-    x: "-100vw",
-    transition: {
-      ease: "easeInOut",
-    },
-  },
-};
+// const containerVariants = {
+//   from: {
+//     opacity: 0,
+//   },
+//   to: {
+//     opacity: 1,
+//     transition: {
+//       // delay: 0.5,
+//       type: "spring",
+//       mass: 0.4, //property on spring
+//       damping: 8, //property on spring
+//       when: "beforeChildren", //attendre qu'il se fasse puis animation du children motion element
+//       staggerChildren: 0.7, // montrer le children un par un avec un delai de 0.7s
+//     },
+//   },
+//   exit: {
+//     x: "-100vw",
+//     transition: {
+//       ease: "easeInOut",
+//     },
+//   },
+// };
 
-const childVariants = {
-  from: {
-    opacity: 0,
-    y: -15,
-  },
-  to: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      // delay: 1,
-    },
-  },
-};
+// const childVariants = {
+//   from: {
+//     opacity: 0,
+//     y: -15,
+//   },
+//   to: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.5,
+//       // delay: 1,
+//     },
+//   },
+// };
 
 const Fonctionnalites = ({
   titre,
