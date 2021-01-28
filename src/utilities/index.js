@@ -10,7 +10,7 @@ export const smoothScroll = (to) => (e) => {
   // console.log({ href, offsetTop });
 
   window.scroll({
-    top: offsetTop,
+    top: offsetTop || 0,
     behavior: "smooth",
   });
 };
@@ -29,8 +29,8 @@ export function debounce(cb, deleay) {
 
 export function isIntersecting(el_id) {
   const element = document.getElementById(el_id);
-  const scrollTop_el = element.offsetTop || element.scrollTop;
-  const height_el = element.clientHeight; // element a la moitié
+  const scrollTop_el = element?.offsetTop || element?.scrollTop || 0;
+  const height_el = element?.clientHeight || 0; // element a la moitié
   const height_window = window.innerHeight;
   const window_scrollTop = document.documentElement.scrollTop;
 
@@ -41,7 +41,7 @@ export function isIntersecting(el_id) {
 
   if (scrollTop_el - 150 < window_scrollTop) {
     // console.log("active", element);
-    console.log(scrollTop_el, window_scrollTop, element);
+    // console.log(scrollTop_el, window_scrollTop, element);
     return true;
   }
 

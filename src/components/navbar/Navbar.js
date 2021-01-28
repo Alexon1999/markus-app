@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useMemo, useState } from "react";
 import Logo from "../../images/logo.png";
 import "./navbar.css";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import NavMobile from "./mobile/NavMobile";
 
 import links from "../../RouteLinks";
@@ -13,6 +13,7 @@ import { SET_ACTIVE } from "../../contexts/Navbar/actiontypes";
 const NavBar = () => {
   const nav = useRef(null);
   const location = useLocation();
+  const history = useHistory();
   const currentPage = useMemo(() => location.pathname, [location.pathname]);
   // const [activeButton, setActiveButton] = useState("home");
   const { state, dispatch } = useNavBarStateValue();
@@ -44,7 +45,7 @@ const NavBar = () => {
             });
           }
         });
-      }, 1000)
+      }, 500)
     );
     return () => {
       window.removeEventListener("scroll", navBar);
@@ -60,8 +61,14 @@ const NavBar = () => {
     smoothScroll(id)(e);
   };
 
+  const pushToHome = (id) => (e) => {
+    history.push("/");
+    IsActiveButton("home")(e);
+    smoothScroll(id)(e);
+  };
+
   return (
-    <nav className='navbar' ref={nav}>
+    <nav className='navbar' ref={nav} id='navbar'>
       <div className='navbar__container'>
         <div className='navbar__logo-container'>
           {location.pathname === "/" ? (
@@ -69,9 +76,9 @@ const NavBar = () => {
               <img className='navbar__logo' src={Logo} alt='Markus' />
             </a>
           ) : (
-            <Link to='/'>
+            <a href='#home' onClick={pushToHome("home")}>
               <img className='navbar__logo' src={Logo} alt='Markus' />
-            </Link>
+            </a>
           )}
         </div>
         <div className='navbar__links'>

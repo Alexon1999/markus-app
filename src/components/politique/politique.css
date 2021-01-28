@@ -1,0 +1,81 @@
+.politique * {
+  margin: 0;
+  padding: 0;
+}
+
+.politique {
+  padding: 1rem 0;
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+}
+
+.politique__header h1 {
+  text-align: center;
+  margin: 1rem 0 1.5rem;
+  position: relative;
+  padding-bottom: 12px;
+  color: #3bb9e0;
+  font-size: 2.3rem;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.politique__header h1::before {
+  margin: auto;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  height: 8px;
+  background: #ebebec;
+  border-radius: 10px;
+}
+
+.politique__header p {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  color: #0a2540;
+  font-weight: 550;
+}
+
+.politique__box h2 {
+  margin: 1.5rem 0 1rem;
+  font-size: 2rem;
+  color: #3bb9e0;
+  font-weight: 600;
+}
+
+.politique__box-content {
+  padding: 0 15px;
+}
+
+.politique__box-content p {
+  /* margin-bottom: 8px; */
+  font-size: 1.2rem;
+}
+
+.politique__markus {
+  font-weight: 800 !important;
+  color: #3bb4d9;
+}
+
+.politique__box-content-box {
+  margin-top: 1.3rem;
+  /* padding-left: 15px; */
+}
+
+.politique__box-content-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.politique__box-content-box p {
+  margin-bottom: 0px;
+}
+.politique__box-content-box p a:hover {
+  color: #3bb4d9;
+  font-weight: 800;
+}

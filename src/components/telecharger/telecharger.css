@@ -167,6 +167,10 @@ a:hover {
   color: rgb(226, 222, 222);
 }
 
+.telecharger__button:hover {
+  cursor: pointer;
+}
+
 .telecharger__button span {
   margin: 0 10px;
 }

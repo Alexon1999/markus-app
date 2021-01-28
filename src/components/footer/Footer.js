@@ -7,11 +7,24 @@ import appleStore from "../../images/app-store.svg";
 // import { useDimensions } from "../../hooks/useDimensions";
 import useWindowMatchMedia from "../../hooks/useWindowMatchMedia";
 import FooterMobile from "./FooterMobile";
+import { Link, useHistory } from "react-router-dom";
+
+const contacts = {
+  tel: "0635364499",
+  addr: "7 place de l'Hôtel de Ville 93600 Aulnay sous Bois, France",
+  email: "contact@markus-app.com",
+};
 
 const Footer = () => {
+  const history = useHistory();
   // const footer_container_ref = useRef(null);
   // const { height, width } = useDimensions(footer_container_ref);
   const { isInTheMediaQuery } = useWindowMatchMedia(600);
+
+  const pushToCGU = (id) => (e) => {
+    history.push("/cgu");
+    // smoothScroll(id)(e);
+  };
 
   return (
     <div className='footer'>
@@ -46,14 +59,13 @@ const Footer = () => {
             <h1>Prendre contact avec nous</h1>
             <div className='footer__contacts-content'>
               <p>
-                <i className='fas fa-phone-alt'></i> 0123456789
+                <i className='fas fa-phone-alt'></i> {contacts.tel}
               </p>
-              <a href='mailto:azerty@gmail.com'>
-                <i className='fas fa-envelope'></i> azerty@gmail.com
+              <a href={"mailto:" + contacts.email}>
+                <i className='fas fa-envelope'></i> {contacts.email}
               </a>
               <p>
-                <i className='fas fa-map-marker-alt'></i> 7 place de l'Hôtel de
-                Ville 93600 Aulnay sous Bois, France
+                <i className='fas fa-map-marker-alt'></i> {contacts.addr}
               </p>
             </div>
             <div className='footer__suivez-nous'>
@@ -71,13 +83,17 @@ const Footer = () => {
 
           <div className='footer__legales'>
             <h1>Conformité</h1>
-            <a href='CGU site web Markus.pdf' target='_blank'>
+            {/* <a href='CGU site web Markus.pdf' target='_blank'>
+              CGU &amp; Mention légales
+            </a> */}
+            {/* <Link to='/cgu'>CGU &amp; Mention légales</Link> */}
+            <a href='#navbar' onClick={pushToCGU("politique")}>
               CGU &amp; Mention légales
             </a>
           </div>
         </div>
       ) : (
-        <FooterMobile />
+        <FooterMobile contacts={contacts} />
       )}
     </div>
   );

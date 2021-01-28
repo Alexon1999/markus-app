@@ -122,7 +122,7 @@ const ContactForm = () => {
     if (estValide()) {
       db.collection("contact").add({
         ...state,
-        createdAt: timestamp,
+        createdAt: timestamp(),
       });
 
       // Envoyer email

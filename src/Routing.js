@@ -13,36 +13,38 @@ import Presentation from "./components/presentation/Presentation";
 import datas from "./components/fonctionnalites/data";
 import About from "./components/about/About";
 import NavBarContextProvider from "./contexts/Navbar/NavBarState";
+import Politique from "./components/politique/Politique";
 
 const Routing = () => {
   return (
     <>
-      <NavBarContextProvider>
-        <Router>
+      <Router>
+        <NavBarContextProvider>
           <NavBar />
+        </NavBarContextProvider>
 
-          <Switch>
-            <Route exact path='/'>
-              <Home />
-              <Presentation />
-              {/* fonctionnalites */}
-              {datas.map((data, i) => (
-                <Fonctionnalites key={data.titre} num={i} {...data} />
-              ))}
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+            <Presentation />
+            {/* fonctionnalites */}
+            {datas.map((data, i) => (
+              <Fonctionnalites key={data.titre} num={i} {...data} />
+            ))}
 
-              <About />
-              <Telecharger />
-              <Contact />
-            </Route>
-            {/* <Route exact path='/fonctionnalites' component={Fonctionnalites} /> */}
-            {/* <Route exact path='/contact' component={Contact} />
+            <About />
+            <Telecharger />
+            <Contact />
+          </Route>
+          {/* <Route exact path='/fonctionnalites' component={Fonctionnalites} /> */}
+          {/* <Route exact path='/contact' component={Contact} />
           <Route exact path='/telecharger' component={Telecharger} /> */}
-            <Route exact path='/laurent-magaye-markus93160' component={Admin} />
-            <Route exact component={NotFoundPage} />
-          </Switch>
-          <Footer />
-        </Router>
-      </NavBarContextProvider>
+          <Route exact path='/laurent-magaye-markus93160' component={Admin} />
+          <Route exact path='/cgu' component={Politique} />
+          <Route exact component={NotFoundPage} />
+        </Switch>
+        <Footer />
+      </Router>
     </>
   );
 };

@@ -35,6 +35,11 @@ const AdminPage = () => {
       });
   }, []);
 
+  const deleteContact = (id) => ()=> {
+    db.collection('contact').doc(id).delete()
+    setContacts(contacts.filter(contact => contact.id !== id))
+  }
+
   return (
     <div
       style={{
@@ -47,7 +52,7 @@ const AdminPage = () => {
         <ExitToAppIcon style={{ fontSize: 40 }} />
       </IconButton>
 
-      <ContactTable contacts={contacts} />
+      <ContactTable contacts={contacts} deleteContact={deleteContact} />
     </div>
   );
 };

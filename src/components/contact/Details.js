@@ -24,14 +24,14 @@ const datas = [
   {
     id: 2,
     nom: "Téléphone",
-    content: ["(+33) 615244088"],
+    content: ["(+33) 635364499"],
     icone: PhoneIcon,
   },
 
   {
     id: 3,
     nom: "Email",
-    content: ["Laurentgoulenok@gmail.com"],
+    content: ["contact@markus-app.com"],
     icone: MailOutlineIcon,
   },
   {

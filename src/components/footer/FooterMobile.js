@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FooterMobile = () => {
+const FooterMobile = ({ contacts }) => {
   const classes = useStyles();
 
   return (
@@ -94,14 +94,13 @@ const FooterMobile = () => {
           <div className='footer__contacts footerMobile__contacts'>
             <div className='footer__contacts-content'>
               <p>
-                <i className='fas fa-phone-alt'></i> 0123456789
+                <i className='fas fa-phone-alt'></i> {contacts.tel}
               </p>
-              <a href='mailto:azerty@gmail.com'>
-                <i className='fas fa-envelope'></i> azerty@gmail.com
+              <a href={"mailto:" + contacts.email}>
+                <i className='fas fa-envelope'></i> {contacts.email}
               </a>
               <p>
-                <i className='fas fa-map-marker-alt'></i> 7 place de l'Hôtel de
-                Ville 93600 Aulnay sous Bois, France
+                <i className='fas fa-map-marker-alt'></i> {contacts.addr}
               </p>
             </div>
             <div className='footer__suivez-nous'>
