@@ -15,7 +15,7 @@ export const smoothScroll = (to) => (e) => {
   });
 };
 
-export function debounce(cb, deleay) {
+export function debounce(cb, delay) {
   let timeoutId;
   return function (...args) {
     if (timeoutId) {
@@ -23,7 +23,7 @@ export function debounce(cb, deleay) {
     }
     timeoutId = setTimeout(() => {
       cb(...args);
-    }, deleay);
+    }, delay);
   };
 }
 

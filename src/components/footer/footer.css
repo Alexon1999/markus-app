@@ -105,11 +105,12 @@
 
 .footer__contacts-content > p,
 .footer__contacts-content > a {
-  margin: 3px 0;
+  margin: 3px 0 !important;
   padding: 0;
   font-size: 0.7rem;
 }
-.footer__contacts a {
+.footer__contacts-content > a {
+  display: block;
   text-decoration: none;
 }
 

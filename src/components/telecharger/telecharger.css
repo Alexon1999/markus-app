@@ -118,6 +118,8 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   bottom: 10px;
+  pointer-events: none;
+  user-select: none;
 }
 
 .telecharger__card__content {

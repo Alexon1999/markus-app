@@ -10,7 +10,7 @@ const datas = [
       "MARKUS permet aux restaurateurs de gérer entièrement leurs stocks depuis l’application",
     details: [
       "Générez une liste de vos produits en stock",
-      "Réceptionnez vos machandises",
+      "Réceptionnez vos marchandises",
       "Réalisez les fiches techniques de vos plats",
       "Mettez à jour vos produits en stock et réduisez vos écarts",
     ],
@@ -53,7 +53,7 @@ const datas = [
     },
     bgImage: {
       image: management,
-      left: -60,
+      left: -60, // -60px
       height: "60%",
     },
     animation: {

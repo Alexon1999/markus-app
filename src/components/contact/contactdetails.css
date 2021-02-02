@@ -59,7 +59,7 @@
   }
 
   .contact-details .MuiCard-root:last-of-type {
-    display: none;
+    /* display: none; */
   }
 
   .contact-details .MuiCard-root .MuiTypography-root {

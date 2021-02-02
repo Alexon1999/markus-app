@@ -20,15 +20,17 @@ const NavBar = () => {
 
   useEffect(() => {
     function navBar() {
-      const windowHeight = window.innerHeight;
-      // console.log(document.documentElement.clientHeight); // pareil
+      if (nav.current) {
+        const windowHeight = window.innerHeight;
+        // console.log(document.documentElement.clientHeight); // pareil
 
-      const { scrollTop } = document.documentElement;
+        const { scrollTop } = document.documentElement;
 
-      if (scrollTop >= windowHeight / 4) {
-        nav.current.style.opacity = 0.97;
-      } else {
-        nav.current.style.opacity = 1;
+        if (scrollTop >= windowHeight / 4) {
+          nav.current.style.opacity = 0.97;
+        } else {
+          nav.current.style.opacity = 1;
+        }
       }
     }
 
@@ -48,7 +50,7 @@ const NavBar = () => {
       }, 500)
     );
     return () => {
-      window.removeEventListener("scroll", navBar);
+      window.removeEventListener("scroll", debounce);
     };
   }, []);
 
@@ -63,8 +65,8 @@ const NavBar = () => {
 
   const pushToHome = (id) => (e) => {
     history.push("/");
-    IsActiveButton("home")(e);
-    smoothScroll(id)(e);
+    IsActiveButton(id)(e);
+    // smoothScroll(id)(e);
   };
 
   return (
@@ -76,9 +78,9 @@ const NavBar = () => {
               <img className='navbar__logo' src={Logo} alt='Markus' />
             </a>
           ) : (
-            <a href='#home' onClick={pushToHome("home")}>
+            <Link to='/' onClick={pushToHome("home")}>
               <img className='navbar__logo' src={Logo} alt='Markus' />
-            </a>
+            </Link>
           )}
         </div>
         <div className='navbar__links'>

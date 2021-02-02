@@ -89,7 +89,7 @@ const Telecharger = () => {
                 <img
                   src={Android}
                   alt='android smartphone'
-                  className='img_android'
+                  className='img_android telecharger__card__image-container__img'
                 />
               </div>
 
@@ -126,7 +126,7 @@ const Telecharger = () => {
                 <img
                   src={Iphone}
                   alt='android smartphone'
-                  className='img_apple'
+                  className='img_apple telecharger__card__image-container__img'
                 />
               </div>
 

@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FooterMobile = ({ contacts }) => {
+const FooterMobile = ({ contacts, pushToCGU }) => {
   const classes = useStyles();
 
   return (
@@ -71,10 +71,10 @@ const FooterMobile = ({ contacts }) => {
         <AccordionDetails>
           <div className='footer__telechargement footerMobile__telechargement'>
             <a href='#test'>
-              <img src={googlePlay} alt='google play store' /> Google play Store
+              <img src={googlePlay} alt='google play store' /> Google Play
             </a>
             <a href='#test'>
-              <img src={appleStore} alt='Apple store' /> Apple store
+              <img src={appleStore} alt='Apple store' /> Apple Store
             </a>
           </div>
         </AccordionDetails>
@@ -104,13 +104,28 @@ const FooterMobile = ({ contacts }) => {
               </p>
             </div>
             <div className='footer__suivez-nous'>
-              <a href='#test' target='_blank'>
+              <a
+                href='https://www.facebook.com/Markusapp-100288068734888'
+                rel='noreferrer'
+                target='_blank'>
                 <i className='fab fa-facebook'></i>
               </a>
-              <a href='#test' target='_blank'>
+              <a
+                href='https://www.instagram.com/markus.application/'
+                rel='noreferrer'
+                target='_blank'>
+                <i className='fab fa-instagram'></i>
+              </a>
+              <a
+                href='https://twitter.com/app_Markus'
+                rel='noreferrer'
+                target='_blank'>
                 <i className='fab fa-twitter'></i>
               </a>
-              <a href='#test' target='_blank'>
+              <a
+                href='https://www.linkedin.com/company/markus-app/'
+                rel='noreferrer'
+                target='_blank'>
                 <i className='fab fa-linkedin-in'></i>
               </a>
             </div>
@@ -128,7 +143,10 @@ const FooterMobile = ({ contacts }) => {
         </AccordionSummary>
         <AccordionDetails>
           <div className='footer__legales'>
-            <a href='CGU site web Markus.pdf' target='_blank'>
+            {/* <a href='CGU site web Markus.pdf' target='_blank'>
+              CGU &amp; Mention légales
+            </a> */}
+            <a href='#politique' onClick={pushToCGU("politique")}>
               CGU &amp; Mention légales
             </a>
           </div>

@@ -8,10 +8,11 @@ import appleStore from "../../images/app-store.svg";
 import useWindowMatchMedia from "../../hooks/useWindowMatchMedia";
 import FooterMobile from "./FooterMobile";
 import { Link, useHistory } from "react-router-dom";
+import { smoothScroll } from "../../utilities";
 
 const contacts = {
   tel: "0635364499",
-  addr: "7 place de l'Hôtel de Ville 93600 Aulnay sous Bois, France",
+  addr: "7 place de l'Hôtel de Ville, 93600 Aulnay sous Bois, France",
   email: "contact@markus-app.com",
 };
 
@@ -23,7 +24,7 @@ const Footer = () => {
 
   const pushToCGU = (id) => (e) => {
     history.push("/cgu");
-    // smoothScroll(id)(e);
+    smoothScroll(id)(e);
   };
 
   return (
@@ -69,13 +70,28 @@ const Footer = () => {
               </p>
             </div>
             <div className='footer__suivez-nous'>
-              <a href='#test' target='_blank'>
+              <a
+                href='https://www.facebook.com/Markusapp-100288068734888'
+                rel='noreferrer'
+                target='_blank'>
                 <i className='fab fa-facebook'></i>
               </a>
-              <a href='#test' target='_blank'>
+              <a
+                href='https://www.instagram.com/markus.application/'
+                rel='noreferrer'
+                target='_blank'>
+                <i className='fab fa-instagram'></i>
+              </a>
+              <a
+                href='https://twitter.com/app_Markus'
+                rel='noreferrer'
+                target='_blank'>
                 <i className='fab fa-twitter'></i>
               </a>
-              <a href='#test' target='_blank'>
+              <a
+                href='https://www.linkedin.com/company/markus-app/'
+                rel='noreferrer'
+                target='_blank'>
                 <i className='fab fa-linkedin-in'></i>
               </a>
             </div>
@@ -87,13 +103,13 @@ const Footer = () => {
               CGU &amp; Mention légales
             </a> */}
             {/* <Link to='/cgu'>CGU &amp; Mention légales</Link> */}
-            <a href='#navbar' onClick={pushToCGU("politique")}>
+            <a href='#politique' onClick={pushToCGU("politique")}>
               CGU &amp; Mention légales
             </a>
           </div>
         </div>
       ) : (
-        <FooterMobile contacts={contacts} />
+        <FooterMobile contacts={contacts} pushToCGU={pushToCGU} />
       )}
     </div>
   );

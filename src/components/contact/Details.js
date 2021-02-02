@@ -37,13 +37,25 @@ const datas = [
   {
     id: 4,
     content: [
-      <a href='#test' target='_blank'>
+      <a
+        href='https://www.facebook.com/Markusapp-100288068734888'
+        rel='noreferrer'
+        target='_blank'>
         <i className='fab fa-facebook' style={{ color: "#38B6FF" }}></i>
       </a>,
-      <a href='#test' target='_blank'>
+      <a
+        href='https://www.instagram.com/markus.application/'
+        rel='noreferrer'
+        target='_blank'>
+        <i className='fab fa-instagram' style={{ color: "#38B6FF" }}></i>
+      </a>,
+      <a href='https://twitter.com/app_Markus' rel='noreferrer' target='_blank'>
         <i className='fab fa-twitter' style={{ color: "#38B6FF" }}></i>
       </a>,
-      <a href='#test' target='_blank'>
+      <a
+        href='https://www.linkedin.com/company/markus-app/'
+        rel='noreferrer'
+        target='_blank'>
         <i className='fab fa-linkedin-in' style={{ color: "#38B6FF" }}></i>
       </a>,
     ],

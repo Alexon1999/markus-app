@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div className='about' id='about'>
       <div className='about__container'>
-        <h1 className='about__container-heading'>Qui sommes nous ?</h1>
+        <h1 className='about__container-heading'>Qui sommes-nous ?</h1>
 
         <p className='about__container-subheading'>
           <span className='about__container-markus'>MARKUS</span> a été conçu et
@@ -29,7 +29,7 @@ const About = () => {
           Doté d’une interface intuitive et ergonomique,{" "}
           <span className='about__container-markus'>MARKUS</span> est
           l’assistant digital indispensable pour tous restaurateurs qui
-          souhaitent avoir un suivi précis de son établissement.
+          souhaitent avoir un suivi précis de leurs établissements.
         </p>
       </div>
       <img src={about} alt='' />

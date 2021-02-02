@@ -79,3 +79,21 @@
   color: #3bb4d9;
   font-weight: 800;
 }
+
+@media (max-width: 1000px) {
+  .politique {
+    padding: 1rem 1rem;
+  }
+
+  .politique__header h1 {
+    font-size: 1.8rem;
+  }
+
+  .politique__header p {
+    font-size: 1.1rem;
+  }
+
+  .politique__box-content p {
+    font-size: 1.1rem;
+  }
+}

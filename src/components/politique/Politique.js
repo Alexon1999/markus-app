@@ -35,7 +35,7 @@ const Politique = () => {
         <div className='politique__box-content'>
           <p>
             Les présentes CGU visent à décrire les conditions d’utilisation du
-            site web <span className='politique__markus'>MARKUS</span>
+            site web <span className='politique__markus'>MARKUS </span>
             édité par <span className='politique__markus'>CEOS TECH</span>,
             société par actions simplifiée au capital social de 100 euros dont
             le siège social est situé au 7 place de l’hôtel de ville, 93600
@@ -264,7 +264,7 @@ const Politique = () => {
             Les cookies sont de petits fichiers stockés temporairement sur le
             disque dur de l’ordinateur de l'Utilisateur par votre navigateur et
             qui sont nécessaires à l’utilisation du site{" "}
-            <span className='politique__markus'>MARKUS</span>
+            <span className='politique__markus'>MARKUS</span>.
           </p>
           <p className='mb-3'>
             Les cookies ne contiennent pas d’information personnelle et ne
