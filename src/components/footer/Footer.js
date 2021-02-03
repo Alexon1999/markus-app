@@ -49,7 +49,7 @@ const Footer = () => {
           <div className='footer__telechargement'>
             <h1>Télécharger gratuitement l'application sur</h1>
             <a href='#test'>
-              <img src={googlePlay} alt='google play store' /> Google play Store
+              <img src={googlePlay} alt='google play store' /> Google Play
             </a>
             <a href='#test'>
               <img src={appleStore} alt='Apple store' /> Apple store

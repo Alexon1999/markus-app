@@ -75,7 +75,8 @@
 
 @media (max-width: 768px) {
   .about__container {
-    width: 90%;
+    width: 100%;
+    padding: 2rem 1.2rem;
   }
   .about > img {
     opacity: 0.5;

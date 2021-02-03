@@ -39,6 +39,7 @@
 
 .home__image {
   pointer-events: none;
+  margin-left: 5px;
 }
 
 .home__hero-hadings > h1 {
@@ -48,7 +49,7 @@
   font-size: 1.5rem;
   margin-bottom: 0;
   letter-spacing: 2px;
-  line-height: 2rem;
+  /* line-height: 2rem; */
 }
 .home__hero-hadings > p {
   color: #fff;
@@ -56,12 +57,14 @@
   font-size: 3rem;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
+  line-height: 3.5rem;
 }
 
 .home__subtext {
   color: #90d9f1 !important;
   font-size: 1.8rem !important;
   margin-bottom: 2rem !important;
+  line-height: 2.3rem !important;
 }
 
 .home__hero-image .home__image {
@@ -173,6 +176,12 @@
   }
 }
 
+@media (max-width: 950px) {
+  .home__hero-hadings > p {
+    line-height: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
   .home__hero-hadings > h1 {
     font-size: 1.5rem;
@@ -218,6 +227,7 @@
   .home__hero-hadings > p {
     font-weight: bold;
     font-size: 1.7rem;
+    line-height: 2.7rem;
   }
 
   .home__subtext {

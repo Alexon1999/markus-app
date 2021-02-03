@@ -29,7 +29,7 @@
 
 .navbar__links {
   display: flex;
-  width: 50%;
+  width: 60%;
   justify-content: space-between;
 }
 .navbar__links a {
@@ -44,18 +44,6 @@
 }
 
 @media (max-width: 1250px) {
-  .navbar__links {
-    width: 60%;
-  }
-}
-
-@media (max-width: 1000px) {
-  .navbar__links {
-    width: 65%;
-  }
-}
-
-@media (max-width: 938px) {
   .navbar__links {
     width: 70%;
   }

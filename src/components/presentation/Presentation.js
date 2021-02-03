@@ -83,6 +83,7 @@ const Presentation = () => {
           pilotage de leur établissement et les aider à faire face aux
           difficultés rencontrées au quotidien
         </p>
+        <h2>- Les Fondateurs</h2>
       </div>
     </div>
   );
