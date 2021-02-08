@@ -13,6 +13,7 @@
   display: flex;
   justify-content: center;
   flex: 0.2;
+  pointer-events: none;
 }
 
 .presentation__presentateur {
@@ -29,6 +30,7 @@
   flex: 0.8;
   padding: 0 0 0 5rem;
   text-align: center;
+  pointer-events: none;
 }
 
 .presentation__content > h1 {

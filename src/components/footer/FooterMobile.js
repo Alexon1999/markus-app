@@ -65,7 +65,7 @@ const FooterMobile = ({ contacts, pushToCGU }) => {
           aria-controls='panel2a-content'
           id='panel2a-header'>
           <Typography className={classes.heading}>
-            Télécharger gratuitement l'application sur
+            Télécharger gratuitement l'application
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

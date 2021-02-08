@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
 
           <div className='footer__telechargement'>
-            <h1>Télécharger gratuitement l'application sur</h1>
+            <h1>Télécharger gratuitement l'application</h1>
             <a href='#test'>
               <img src={googlePlay} alt='google play store' /> Google Play
             </a>
