@@ -125,22 +125,25 @@ const ContactForm = () => {
         createdAt: timestamp(),
       });
 
-      // Envoyer email
-      emailjs
-        .sendForm(
-          "service_6127e6c",
-          "template_xlbstkg",
-          e.target,
-          "user_kgB4die8lZG1EnOhBisaS"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+      // Email-js Envoyer email
+      // https://www.emailjs.com/docs/examples/reactjs/
+      // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+
+      // emailjs
+      //   .sendForm(
+      //     "YOUR_SERVICE_ID",
+      //     "YOUR_TEMPLATE_ID",
+      //     e.target,
+      //     "YOUR_USER_ID"
+      //   )
+      //   .then(
+      //     (result) => {
+      //       console.log(result.text);
+      //     },
+      //     (error) => {
+      //       console.log(error.text);
+      //     }
+      //   );
 
       reinitialiserState();
 
@@ -230,7 +233,7 @@ const ContactForm = () => {
             Envoyé
             <i
               className='fas fa-thumbs-up'
-              style={{ color: "#4caf50", marginLeft: "1rem" }}></i>
+              style={{ color: "#35a7e9", marginLeft: "1rem" }}></i>
           </>
         }>
         Message a bien été envoyé , Vous serez très rapidement être contacté
