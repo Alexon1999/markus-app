@@ -104,7 +104,7 @@ const Footer = () => {
             </a> */}
             {/* <Link to='/cgu'>CGU &amp; Mention légales</Link> */}
             <a href='#politique' onClick={pushToCGU("politique")}>
-              CGU &amp; Mention légales
+              CGU &amp; Mentions légales
             </a>
           </div>
         </div>

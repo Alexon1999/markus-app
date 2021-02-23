@@ -147,7 +147,7 @@ const FooterMobile = ({ contacts, pushToCGU }) => {
               CGU &amp; Mention légales
             </a> */}
             <a href='#politique' onClick={pushToCGU("politique")}>
-              CGU &amp; Mention légales
+              CGU &amp; Mentions légales
             </a>
           </div>
         </AccordionDetails>
